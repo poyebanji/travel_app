@@ -1,7 +1,7 @@
 import React from 'react'
-import {Container,Button} from 'react-bootstrap'
+import {Container} from 'react-bootstrap'
 import Footer from './../Footer/Footer'
-
+import Signin from './../Signin/Signin'
 
 const Landing = ()=> {
 
@@ -10,8 +10,8 @@ const Landing = ()=> {
     I am Landing Page
     <div>LOGO</div>
     <div>Descrpition</div>
-    <Button type='button'>Signup</Button>
-    <Button type='button'>Login</Button>
+
+    <Signin />
     <Footer />
 
  
