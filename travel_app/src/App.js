@@ -14,16 +14,31 @@ import Login from "./Components/Login/login";
 
 
 class App extends Component {
-  state = {  }
+  state = { 
+    route:"signin" 
+   }
   render() { 
     return (
       <React.Fragment>
          <Navigation />
-        <Landing />
-      <Login />
+         {this.state.route === "home"
+         ?
+         <div>
+         <Question />
+         <Footer />
+         </div>
+         : (
+           this.state.route === "signin"
+          ?
+          <Login />
+          :
+          <Landing />
+         )
+        
+         }
+
    
-    <Question />
-    <Footer />
+   
     </React.Fragment>
       );
   }
