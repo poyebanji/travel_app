@@ -7,7 +7,7 @@ import "./App.css"
 import Landing from "./Components/Landing/Landing";
 import Footer from "./Components/Footer/Footer";
 import Question from "./Components/Question/Question";
-import Login from "./Components/Login/Login";
+import Login from "./Components/Login/login";
 // import Singin from "./Components/Login/Signin/Signin";
 // import Registration from "./Components/Registration/Registration";
 
