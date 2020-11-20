@@ -5,7 +5,7 @@ import Signin from "./Signin/Signin"
 
 
 // class Login extends Component {
-function Login() {
+function Login({onRouteChange}) {
     // state = {  }
 //   render() 
     const [registrationFormStatus, setRegistartionFormStatus] = useState(false);
@@ -56,10 +56,10 @@ function Login() {
         </div>
         <div className="form-group">
           <animated.form action="" id="loginform" style={loginProps}>
-            <Signin />
+            <Signin onRouteChange={onRouteChange} />
           </animated.form>
           <animated.form action="" id="registerform" style={registerProps}>
-            <Registration />
+            <Registration onRouteChange={onRouteChange} />
           </animated.form>
         </div>
         <animated.div className="forgot-panel" style={loginProps}>

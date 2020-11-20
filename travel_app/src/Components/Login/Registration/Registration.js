@@ -1,19 +1,26 @@
 import React, { Component } from 'react';
 
 class Registration extends Component {
-  state = {  }
+  constructor({props}){
+    super(props)
+    this.state = {  }
+  }
+
+  onSubmitSignin = ()=> {
+    this.props.onRouteChange('home')
+  }
   render() { 
     return (       
     <React.Fragment>
-        <label for="fullname">full name</label>
+        <label htmlFor="fullname">full name</label>
         <input type="text" id="fullname" />
-        <label for="email">email</label>
+        <label htmlFor="email">email</label>
         <input type="text" id="email" />
-        <label for="password">password</label>
+        <label htmlFor="password">password</label>
         <input type="text" id="password" />
-        <label for="confirmpassword">confirm password</label>
+        <label htmlFor="confirmpassword">confirm password</label>
         <input type="text" id="confirmpassword" />
-        <input type="submit" value="submit" class="submit" />
+        <input onClick = {this.onSubmitSignin} type="submit" value="submit" className="submit" />
       </React.Fragment>
        );
   }

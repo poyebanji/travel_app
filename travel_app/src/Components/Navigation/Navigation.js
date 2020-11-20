@@ -1,10 +1,14 @@
 import React from 'react';
 // import {Container} from 'react-bootstrap'
 
-const Navigation = () => {
+const Navigation = ({onRouteChange}) => {
     return (
         <React.Fragment>
-        <div>LOGO   Signout</div>
+        <nav>
+            <div onClick = {()=>onRouteChange('signin')}> Sign In</div>
+            <div onClick = {()=>onRouteChange('signout')}> Sign Out</div>
+
+        </nav>
             
         </React.Fragment>
     );

@@ -17,27 +17,32 @@ class App extends Component {
   state = { 
     route:"signin" 
    }
+
+onRouteChange = (route)=> {
+  this.setState({route:route})
+  console.log(route)
+}
+
   render() { 
     return (
       <React.Fragment>
-         <Navigation />
+         <Navigation onRouteChange={this.onRouteChange} />
          {this.state.route === "home"
          ?
          <div>
          <Question />
-         <Footer />
+         
          </div>
          : (
            this.state.route === "signin"
           ?
-          <Login />
+          <Login onRouteChange={this.onRouteChange} />
           :
-          <Landing />
+          <Landing onRouteChange={this.onRouteChange}/>
          )
         
          }
-
-   
+      <Footer />  
    
     </React.Fragment>
       );

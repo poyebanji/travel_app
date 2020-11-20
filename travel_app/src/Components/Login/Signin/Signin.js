@@ -1,15 +1,24 @@
 import React, { Component } from 'react';
 
 class Signin extends Component {
-  state = {  }
+  constructor({props}){
+    super(props)
+    this.state = {  }
+  }
+onSubmitSignin = ()=> {
+  this.props.onRouteChange('home')
+}
+
   render() { 
+    // const {onRouteChange} = this.props
     return (
       <React.Fragment>
-      <label for="username">USERNAME</label>
+      <label htmlFor="username">USERNAME</label>
       <input type="text" id="username" />
-      <label for="password">PASSWORD</label>
+      <label htmlFor="password">PASSWORD</label>
       <input type="text" id="password" />
-      <input type="submit" value="submit" className="submit" />
+      <input  onClick = {this.onSubmitSignin} type="submit" value="submit" className="submit" />
+      {/* <div onClick = {()=>onRouteChange('home')}>signin</div> */}
     </React.Fragment>
       );
   }

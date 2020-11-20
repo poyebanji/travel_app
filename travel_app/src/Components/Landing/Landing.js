@@ -4,9 +4,10 @@ import MainText from './LandingPageComponents/MainText'
 import ImageLarge from './LandingPageComponents/ImageLarge';
 import MainButton from './LandingPageComponents/MainButton'
 
-class Landing extends React.Component {
+const Landing = ({onRouteChange})=> {
+  
 
-    render() {
+ 
         const largeMessage = "Adventure is waiting"
         const mediumMessage = "Just follow a few simple steps to find your next big adventure!"
         const signIn = "sign in/ register"
@@ -21,7 +22,7 @@ class Landing extends React.Component {
                 <div className="row">
                     <div className="col">
                         <MainText largeMessage={largeMessage} mediumMessage={mediumMessage} />
-                        <MainButton text={signIn}/>
+                        <MainButton onRouteChange={onRouteChange} text={signIn}/>
                     </div>
                     <div className="col">
                         <ImageLarge />
@@ -29,7 +30,7 @@ class Landing extends React.Component {
                 </div>
             </div>
         )
-    }
+    
 }
 
 export default Landing
