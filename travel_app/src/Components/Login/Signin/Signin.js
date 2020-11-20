@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Singin extends Component {
+class Signin extends Component {
   state = {  }
   render() { 
     return (
@@ -15,4 +15,4 @@ class Singin extends Component {
   }
 }
  
-export default Singin;
+export default Signin;
