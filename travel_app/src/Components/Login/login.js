@@ -1,4 +1,4 @@
-import React, { useState, render } from 'react';
+import React, { useState } from 'react';
 import { useSpring, animated } from "react-spring";
 import Registration from "./Registration/Registration"
 import Signin from "./Signin/Signin"
