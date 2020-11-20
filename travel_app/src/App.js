@@ -25,7 +25,7 @@ class App extends Component {
     <Question />
     <Footer />
     </React.Fragment>
-      );
+      )
   }
 }
  
