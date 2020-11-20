@@ -14,16 +14,36 @@ import Login from "./Components/Login/login";
 
 
 class App extends Component {
-  state = {  }
+  state = { 
+    route:"signin" 
+   }
+
+onRouteChange = (route)=> {
+  this.setState({route:route})
+  console.log(route)
+}
+
   render() { 
     return (
       <React.Fragment>
-         <Navigation />
-        <Landing />
-      <Login />
+         <Navigation onRouteChange={this.onRouteChange} />
+         {this.state.route === "home"
+         ?
+         <div>
+         <Question />
+         
+         </div>
+         : (
+           this.state.route === "signin"
+          ?
+          <Login onRouteChange={this.onRouteChange} />
+          :
+          <Landing onRouteChange={this.onRouteChange}/>
+         )
+        
+         }
+      <Footer />  
    
-    <Question />
-    <Footer />
     </React.Fragment>
       )
   }
