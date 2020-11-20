@@ -6,6 +6,7 @@ import Navigation from "./Components/Navigation/Navigation"
 import "./App.css"
 import Landing from "./Components/Landing/Landing";
 import Footer from "./Components/Footer/Footer";
+import Question from "./Components/Question/Question";
 
 
 
@@ -39,6 +40,7 @@ function App() {
     return (
       <React.Fragment>
         <Navigation />
+        <Landing />
       <div className="login-register-wrapper">
         <div className="nav-buttons">
           <animated.button
@@ -68,7 +70,8 @@ function App() {
           <div>Forgot your password</div>
         </animated.div>
       </div>
-      <Landing />
+      <Question />
+      
       <Footer />
       </React.Fragment>
     );

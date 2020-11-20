@@ -1,16 +1,16 @@
 import React from 'react'
-import {Container} from 'react-bootstrap'
+// import {Container} from 'react-bootstrap'
 
 
 const Landing = ()=> {
 
     return (
-<Container> 
+<React.Fragment> 
      <div>Landing Page Content</div> 
     
 
  
- </Container> 
+ </React.Fragment> 
     )
   
 }

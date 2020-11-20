@@ -1,12 +1,12 @@
 import React from 'react';
-import {Container} from 'react-bootstrap'
+// import {Container} from 'react-bootstrap'
 
 const Navigation = () => {
     return (
-        <Container>
+        <React.Fragment>
         <div>LOGO   Signout</div>
             
-        </Container>
+        </React.Fragment>
     );
 };
 
