@@ -6,6 +6,7 @@ class Signin extends Component {
     this.state = {  }
   }
 onSubmitSignin = ()=> {
+  
   this.props.onRouteChange('home')
 }
 
@@ -18,7 +19,7 @@ onSubmitSignin = ()=> {
       <label htmlFor="password">PASSWORD</label>
       <input type="text" id="password" />
       <input  onClick = {this.onSubmitSignin} type="submit" value="submit" className="submit" />
-      {/* <div onClick = {()=>onRouteChange('home')}>signin</div> */}
+      <div>Forgot your password</div>
     </React.Fragment>
       );
   }
