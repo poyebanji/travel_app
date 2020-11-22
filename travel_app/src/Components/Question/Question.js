@@ -13,9 +13,9 @@ const personalities = [
 const Question = () => {
     return ( 
         <React.Fragment>
-        <div id="main-question-area" className="container-md">
-            <h3>What kind of personality do you have?</h3>
-            <form id="question-form">
+        <div id="main-question-area" className="container-md personality-area">
+            <h3 className="personality-heading">What kind of personality do you have?</h3>
+            <form id="question-form" className="personality-selectors">
                 <label><p>Adventurous</p></label>
                 <input name="personality" type="radio"/>
                 <br/>
@@ -28,10 +28,11 @@ const Question = () => {
                 <label><p>Adventurous</p></label>
                 <input name="personality" type="radio"/>
                 <br/>
+                <input type="submit"/>
             </form>
         </div>
         <hr/>
-        <div id="result-area" className="container-md">
+        <div id="result-area" className="container-md result-area">
             <p>
                 Banff
             </p>

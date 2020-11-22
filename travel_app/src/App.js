@@ -43,7 +43,7 @@ onRouteChange = (route)=> {
         
          }
       <Footer />  
-   
+      
     </React.Fragment>
       )
   }
