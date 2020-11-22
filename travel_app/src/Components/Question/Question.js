@@ -11,11 +11,11 @@ const personalities = [
 ]
 
 const Question = () => {
-    const usersPersonalites = personalities.map((personality)=>{
+    const usersPersonalites = personalities.map((personality,i)=>{
         return (
             <div>
-                <label><p>{personality}</p></label>
-                <input name='personalitySelection' id={personality} type="radio"/>
+                <label ><p>{personality} </p></label>
+                <input name='personalitySelection' key={personality} id={personality} type="radio"/>
                 <br/>
             </div>
 

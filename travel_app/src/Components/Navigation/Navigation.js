@@ -16,9 +16,9 @@ const Navigation = ({onRouteChange}) => {
     </Nav>
     <Nav >
       {/* <FormControl type="text" placeholder="Search" className="mr-sm-2" /> */}
-      <Nav.Link href="contact">Contact us</Nav.Link>
-      <Button onClick = {()=>onRouteChange('signin')} variant="outline-info">Signin</Button>
+      <Nav.Link href="contact">Contact us</Nav.Link>      
     </Nav>
+    <Button onClick = {()=>onRouteChange('signin')}  variant="outline-info">Signin</Button>
   </Navbar>
 
       
