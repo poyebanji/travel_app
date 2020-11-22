@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+import {  BrowserRouter, Route,Switch } from "react-router-dom";
 // import { useSpring, animated } from "react-spring";
 // import Registration from "./Components/Registration/Registration"
 // import Signin from "./Components/Signin/Signin"
 import Navigation from "./Components/Navigation/Navigation"
+import Contact from "./Components/Contact/Contact"
 import "./App.css"
 import Landing from "./Components/Landing/Landing";
 import Footer from "./Components/Footer/Footer";
@@ -15,7 +17,7 @@ import Login from "./Components/Login/login";
 
 class App extends Component {
   state = { 
-    route:"signin" 
+    route:"signout" 
    }
 
 onRouteChange = (route)=> {
@@ -25,8 +27,12 @@ onRouteChange = (route)=> {
 
   render() { 
     return (
-      <React.Fragment>
+
+      <BrowserRouter>
+            <React.Fragment>
          <Navigation onRouteChange={this.onRouteChange} />
+         <Switch>
+           <Route exact path ='/'>
          {this.state.route === "home"
          ?
          <div>
@@ -42,9 +48,18 @@ onRouteChange = (route)=> {
          )
         
          }
+         </Route>
+         <Route path="/contact">
+            <Contact />
+
+         </Route>
+         </Switch>
       <Footer />  
       
     </React.Fragment>
+      </BrowserRouter>
+
+
       )
   }
 }

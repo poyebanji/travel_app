@@ -11,24 +11,24 @@ const personalities = [
 ]
 
 const Question = () => {
+    const usersPersonalites = personalities.map((personality)=>{
+        return (
+            <div>
+                <label><p>{personality}</p></label>
+                <input name={personality} id={personality} type="radio"/>
+                <br/>
+            </div>
+
+        )
+    })
     return ( 
         <React.Fragment>
         <div id="main-question-area" className="container-md personality-area">
             <h3 className="personality-heading">What kind of personality do you have?</h3>
             <form id="question-form" className="personality-selectors">
-                <label><p>Adventurous</p></label>
-                <input name="personality" type="radio"/>
-                <br/>
-                <label><p>Adventurous</p></label>
-                <input name="personality" type="radio"/>
-                <br/>
-                <label><p>Adventurous</p></label>
-                <input name="personality" type="radio"/>
-                <br/>
-                <label><p>Adventurous</p></label>
-                <input name="personality" type="radio"/>
-                <br/>
+                {usersPersonalites}
                 <input type="submit"/>
+               
             </form>
         </div>
         <hr/>
