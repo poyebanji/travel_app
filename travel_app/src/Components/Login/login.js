@@ -63,7 +63,7 @@ function Login({onRouteChange}) {
           </animated.form>
         </div>
         <animated.div className="forgot-panel" style={loginProps}>
-          <div>Forgot your password</div>
+          
         </animated.div>
       </div>
       
