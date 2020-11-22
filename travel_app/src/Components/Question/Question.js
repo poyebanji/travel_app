@@ -15,7 +15,7 @@ const Question = () => {
         return (
             <div>
                 <label><p>{personality}</p></label>
-                <input name={personality} id={personality} type="radio"/>
+                <input name='personalitySelection' id={personality} type="radio"/>
                 <br/>
             </div>
 

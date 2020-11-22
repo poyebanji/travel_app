@@ -5,6 +5,7 @@ import {  BrowserRouter, Route,Switch } from "react-router-dom";
 // import Signin from "./Components/Signin/Signin"
 import Navigation from "./Components/Navigation/Navigation"
 import Contact from "./Components/Contact/Contact"
+import Profile from "./Components/Profile/Profile"
 import "./App.css"
 import Landing from "./Components/Landing/Landing";
 import Footer from "./Components/Footer/Footer";
@@ -51,7 +52,9 @@ onRouteChange = (route)=> {
          </Route>
          <Route path="/contact">
             <Contact />
-
+         </Route>
+         <Route path="/profile">
+            <Profile />
          </Route>
          </Switch>
       <Footer />  
