@@ -1,6 +1,9 @@
 import React from 'react'
+<<<<<<< HEAD
 
 let request;
+=======
+>>>>>>> f4cc7df675bd7bd54e8a20a78726dbbc5a1d71f5
 
 const matchCity = () => {
     
@@ -50,7 +53,7 @@ const Question = () => {
         <hr/>
         <div id="result-area" className="container-md result-area">
             <p>
-                {request}
+              
             </p>
         </div>
         </React.Fragment>
