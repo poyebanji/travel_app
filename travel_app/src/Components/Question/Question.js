@@ -1,27 +1,4 @@
 import React from 'react'
-<<<<<<< HEAD
-=======
-
-const request = "loading";
-
-const matchCity = () =>{
-
-    let city = fetch('/questions', {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: {
-            personality: "Adventurous"
-        }
-    }).then(respsonse => respsonse.json())
-    .then(data =>{
-        request = data;
-    })
-}
->>>>>>> cbc85b50ff047fe2665f7a899672e80bacd6231d
-
-let request;
 
 const matchCity = () => {
     
@@ -71,7 +48,7 @@ const Question = () => {
         <hr/>
         <div id="result-area" className="container-md result-area">
             <p>
-                {request}
+              
             </p>
         </div>
         </React.Fragment>
