@@ -24,7 +24,8 @@ class Signin extends Component {
   //   .then();
   // }
 
-onSubmitSignin = ()=> {
+onSubmitSignin = (event)=> {
+  event.preventDefault()
   fetch('http://localhost:3000/signin', {
     method:'POST',
     headers:{'Content-Type': 'application/json'},
@@ -34,8 +35,16 @@ onSubmitSignin = ()=> {
     })
   })
   .then (response => response.json() )
-  .then (user => console.log(user))
-  this.props.onRouteChange('home')
+  .then (user => {
+    if (user=== 'incorrect form submission') {
+      alert(user)
+      this.props.onRouteChange('signin')
+      
+   
+    }else if(user.id) {
+      this.props.onRouteChange('home')
+    }
+  })
 }
 
   render() { 
