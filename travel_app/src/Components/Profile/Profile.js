@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Contact = () => {
+const Profile = () => {
     return (
         <div>
-            <h1>Contact Us Container Under Construction</h1>
+            <h1>Profile Container Under Construction</h1>
                 <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras gravida,
       risus at dapibus aliquet, elit quam scelerisque tortor, nec accumsan eros
@@ -14,4 +14,4 @@ const Contact = () => {
       );
 }
  
-export default Contact;
+export default Profile;
