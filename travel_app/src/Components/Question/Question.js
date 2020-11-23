@@ -1,7 +1,23 @@
 import React from 'react'
-// const request = fetch('http://localhost:3000')
-// .then(response => response.json());
 
+let request;
+
+const matchCity = () => {
+    
+    fetch('http://localhost:3000/questions', {
+        method: "POST",
+        headers: {
+            "Content-Type" : "application/json"
+        },
+        body: JSON.stringify({personality: "Relaxing"})
+    })
+    .then(response => response.json())
+    .then((data) => {
+        console.log(data)
+    })
+}
+
+matchCity()
 const personalities = [
     'Adventurous',
     'Laid-back',
@@ -34,7 +50,7 @@ const Question = () => {
         <hr/>
         <div id="result-area" className="container-md result-area">
             <p>
-                Banff
+                {request}
             </p>
         </div>
         </React.Fragment>
