@@ -5,6 +5,13 @@ class Signin extends Component {
     super(props)
     this.state = {  }
   }
+
+  componentDidMount() {
+    fetch('')
+    .then(Response=> Response.json())
+    .then();
+  }
+
 onSubmitSignin = ()=> {
   
   this.props.onRouteChange('home')
