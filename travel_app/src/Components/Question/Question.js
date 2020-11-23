@@ -1,4 +1,6 @@
 import React from 'react'
+<<<<<<< HEAD
+=======
 
 const request = "loading";
 
@@ -17,7 +19,26 @@ const matchCity = () =>{
         request = data;
     })
 }
+>>>>>>> cbc85b50ff047fe2665f7a899672e80bacd6231d
 
+let request;
+
+const matchCity = () => {
+    
+    fetch('http://localhost:3000/questions', {
+        method: "POST",
+        headers: {
+            "Content-Type" : "application/json"
+        },
+        body: JSON.stringify({personality: "Relaxing"})
+    })
+    .then(response => response.json())
+    .then((data) => {
+        console.log(data)
+    })
+}
+
+matchCity()
 const personalities = [
     'Adventurous',
     'Laid-back',
