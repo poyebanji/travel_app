@@ -34,8 +34,15 @@ onSubmitSignin = ()=> {
     })
   })
   .then (response => response.json() )
-  .then (user => console.log(user))
-  this.props.onRouteChange('home')
+  .then (user => {
+    if (user=== 'incorrect form submission') {
+      this.props.onRouteChange('signin')
+      alert(user)
+   
+    }else if(user.id) {
+      this.props.onRouteChange('home')
+    }
+  })
 }
 
   render() { 
