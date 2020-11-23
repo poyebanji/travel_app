@@ -13,7 +13,7 @@ const matchCity = () =>{
             personality: "Adventurous"
         }
     }).then(respsonse => respsonse.json())
-    .then(data = (data) =>{
+    .then(data =>{
         request = data;
     })
 }
@@ -59,7 +59,7 @@ const Question = () => {
         <React.Fragment>
         <div id="main-question-area" className="container-md personality-area">
             <h3 className="personality-heading">What kind of personality do you have?</h3>
-            <form onSubmit={} id="question-form" className="personality-selectors">
+            <form id="question-form" className="personality-selectors">
                 {usersPersonalites}
                 <input type="submit"/>
                
