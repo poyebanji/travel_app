@@ -1,6 +1,4 @@
 import React from 'react'
-<<<<<<< HEAD
-=======
 
 const request = "loading";
 
@@ -19,7 +17,6 @@ const matchCity = () =>{
         request = data;
     })
 }
->>>>>>> cbc85b50ff047fe2665f7a899672e80bacd6231d
 
 let request;
 
