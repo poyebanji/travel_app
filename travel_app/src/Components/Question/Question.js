@@ -1,6 +1,5 @@
 import React from 'react'
-// const request = fetch('http://localhost:3000')
-// .then(response => response.json());
+
 
 const personalities = [
     'Adventurous',
@@ -34,7 +33,7 @@ const Question = () => {
         <hr/>
         <div id="result-area" className="container-md result-area">
             <p>
-                Banff
+                {request}
             </p>
         </div>
         </React.Fragment>
