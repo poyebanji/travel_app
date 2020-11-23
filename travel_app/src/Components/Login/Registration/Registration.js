@@ -30,7 +30,8 @@ class Registration extends Component {
   }
 
 
-  onSubmitSignin = ()=> {
+  onSubmitSignin = (event)=> {
+    event.preventDefault()
     fetch('http://localhost:3000/register', {
     method:'POST',
     headers:{'Content-Type': 'application/json'},
@@ -43,8 +44,8 @@ class Registration extends Component {
   .then (response => response.json() )
   .then (user => {
     if (user=== 'incorrect form submission') {
-      this.props.onRouteChange('signin')
       alert(user)
+      this.props.onRouteChange('signin')      
     }else if(user.id) {
       this.props.onRouteChange('home')
     }
