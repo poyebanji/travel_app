@@ -1,5 +1,22 @@
 import React from 'react'
 
+const request = "loading";
+
+const matchCity = () =>{
+
+    let city = fetch('/questions', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: {
+            personality: "Adventurous"
+        }
+    }).then(respsonse => respsonse.json())
+    .then(data = (data) =>{
+        request = data;
+    })
+}
 
 const personalities = [
     'Adventurous',
@@ -24,7 +41,7 @@ const Question = () => {
         <React.Fragment>
         <div id="main-question-area" className="container-md personality-area">
             <h3 className="personality-heading">What kind of personality do you have?</h3>
-            <form id="question-form" className="personality-selectors">
+            <form onSubmit={} id="question-form" className="personality-selectors">
                 {usersPersonalites}
                 <input type="submit"/>
                
