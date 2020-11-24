@@ -14,35 +14,41 @@ import Login from "./Components/Login/login";
 // import Singin from "./Components/Login/Signin/Signin";
 // import Registration from "./Components/Registration/Registration";
 
-
+const initialState = { 
+  route:"signout" ,
+  isSignedIn:false
+ }
 
 class App extends Component {
-  state = { 
-    route:"signout" 
-   }
+  state = {initialState}
 
 onRouteChange = (route)=> {
+  if(route === 'signout'){
+    this.setState({initialState})
+  }else if (route === 'signin'){
+    this.setState({isSignedIn:true})
+  }
   this.setState({route:route})
-  console.log(route)
-}
+ }
 
   render() { 
+    const {route, isSignedIn} = this.state
     return (
       
 
       <BrowserRouter>
             <React.Fragment>
-         <Navigation onRouteChange={this.onRouteChange} />
+         <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
          <Switch>
            <Route exact path ='/'>
-         {this.state.route === "home"
+         {route === "home"
          ?
          <div>
          <Question />
          
          </div>
          : (
-           this.state.route === "signin"
+           route === "signin"
           ?
           <Login onRouteChange={this.onRouteChange} />
           :

@@ -16,11 +16,11 @@ const Question = () => {
 
     const usersPersonalites = personalities.map((personal,i)=>{
         return (
-            <div>
+            <div key={personal.toString()}>
                 <label htmlFor={i}><p>{personal}</p></label>
                 <input 
                 name='personalitySelection' 
-                key={personal.toString()} 
+                 
                 id={i} 
                 type="radio"
                 onClick={(e)=>{
