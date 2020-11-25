@@ -42,7 +42,10 @@ onSubmitSignin = (event)=> {
       
    
     }else if(user.id) {
+      console.log(user)
+      this.props.loadUser(user)
       this.props.onRouteChange('home')
+      
     }
   })
 }

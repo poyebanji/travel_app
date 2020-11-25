@@ -9,10 +9,11 @@ const personalities = [
     'Spontaneous'
 ]
 
-const Question = () => {
-
+const Question = ({user}) => {
+ 
     const [personality, setPersonality] = useState("")
     const [city, setCity] = useState("Loading")
+    const [result, setResult] = useState([])
 
     const usersPersonalites = personalities.map((personal,i)=>{
         return (
@@ -47,11 +48,25 @@ const Question = () => {
             setCity(data)
             console.log(data)
         })
+        fetch(`https://www.mapquestapi.com/search/v2/radius?origin=${city},+AB&radius=50&maxMatches=5&ambiguities=ignore&hostedData=mqap.ntpois|group_sic_code=?|701111&outFormat=json&key=zEOA7EFpBlhIdscffyFHdMO1PthS2OVM`
+
+        ).then(response => response.json())
+        .then(data=>{
+            setResult(data.searchResults)
+        console.log(data.searchResults)
+       
+        })
     }
+
+    const displayResult = result.map((data,i)=>{
+        return <h5 key={i}>{i+1}--{data.fields.group_sic_code_name} {data.name}</h5>
+    })
     
     return ( 
         <React.Fragment>
         <div id="main-question-area" className="container-md personality-area">
+            
+            <h3>Welcome {user.name}</h3>
             <h3 className="personality-heading">What kind of personality do you have?</h3>
             <form id="question-form" className="personality-selectors">
                 {usersPersonalites}
@@ -69,6 +84,7 @@ const Question = () => {
             <p>
               {city}
             </p>
+            {displayResult}
         </div>
         </React.Fragment>
      );

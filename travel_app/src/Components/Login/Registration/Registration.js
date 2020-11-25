@@ -47,6 +47,7 @@ class Registration extends Component {
       alert(user)
       this.props.onRouteChange('signin')      
     }else if(user.id) {
+      this.props.loadUser(user)
       this.props.onRouteChange('home')
     }
   })

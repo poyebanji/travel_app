@@ -21,7 +21,23 @@ import LearnMore from "./Components/LearnMore/LearMore"
 class App extends Component {
   state = { 
     route:"signout" ,
-    isSignedIn:false
+    isSignedIn:false,
+    user:{
+      name: "",
+      email:"",
+      joined:""
+    }
+
+   }
+
+loadUser = (data)=>{
+     this.setState({user:{
+       name:data.name,
+       email:data.email,
+       joined:data.joined
+     }
+
+     })
    }
 
 onRouteChange = (route)=> {
@@ -35,20 +51,15 @@ onRouteChange = (route)=> {
  }
 
   render() { 
-    const {route, isSignedIn} = this.state
+    const {route, isSignedIn, user} = this.state
     let displayPage;
     if (route==='home'){
-     displayPage = <div>
-      <Question />
-      
-      </div>
+      displayPage =  <Question user={user} onRouteChange={this.onRouteChange} />
     } else if (route==='signin') {
-      displayPage =  <Login onRouteChange={this.onRouteChange} />
+      displayPage =  <Login loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
     } else if (route==='signout') {
       displayPage =  <Landing onRouteChange={this.onRouteChange} />
-    } else if (route==='home') {
-        displayPage =  <Question onRouteChange={this.onRouteChange} />
-    } else if (route==='contact') {
+    }  else if (route==='contact') {
         displayPage =  <Contact onRouteChange={this.onRouteChange} />
     } else if (route==='profile') {
       displayPage =  <Profile onRouteChange={this.onRouteChange} />
