@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {  BrowserRouter, Route,Switch } from "react-router-dom";
+// import {  BrowserRouter, Route,Switch } from "react-router-dom";
 // import { useSpring, animated } from "react-spring";
 // import Registration from "./Components/Registration/Registration"
 // import Signin from "./Components/Signin/Signin"
@@ -11,21 +11,24 @@ import Landing from "./Components/Landing/Landing";
 import Footer from "./Components/Footer/Footer";
 import Question from "./Components/Question/Question";
 import Login from "./Components/Login/login";
-// import Singin from "./Components/Login/Signin/Signin";
-// import Registration from "./Components/Registration/Registration";
+import LearnMore from "./Components/LearnMore/LearMore"
 
-const initialState = { 
-  route:"signout" ,
-  isSignedIn:false
- }
+// const initialState = { 
+//   route:"signout" ,
+//   isSignedIn:false
+//  }
 
 class App extends Component {
-  state = {initialState}
+  state = { 
+    route:"signout" ,
+    isSignedIn:false
+   }
 
 onRouteChange = (route)=> {
   if(route === 'signout'){
-    this.setState({initialState})
-  }else if (route === 'signin'){
+    this.setState({isSignedIn:false})
+   
+  }else if (route === 'home'){
     this.setState({isSignedIn:true})
   }
   this.setState({route:route})
@@ -33,41 +36,36 @@ onRouteChange = (route)=> {
 
   render() { 
     const {route, isSignedIn} = this.state
+    let displayPage;
+    if (route==='home'){
+     displayPage = <div>
+      <Question />
+      
+      </div>
+    } else if (route==='signin') {
+      displayPage =  <Login onRouteChange={this.onRouteChange} />
+    } else if (route==='signout') {
+      displayPage =  <Landing onRouteChange={this.onRouteChange} />
+    } else if (route==='home') {
+        displayPage =  <Question onRouteChange={this.onRouteChange} />
+    } else if (route==='contact') {
+        displayPage =  <Contact onRouteChange={this.onRouteChange} />
+    } else if (route==='profile') {
+      displayPage =  <Profile onRouteChange={this.onRouteChange} />
+    } else if (route==='learnMore') {
+      displayPage =  <LearnMore onRouteChange={this.onRouteChange} />
+    } 
     return (
       
 
-      <BrowserRouter>
+    
             <React.Fragment>
          <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
-         <Switch>
-           <Route exact path ='/'>
-         {route === "home"
-         ?
-         <div>
-         <Question />
-         
-         </div>
-         : (
-           route === "signin"
-          ?
-          <Login onRouteChange={this.onRouteChange} />
-          :
-          <Landing onRouteChange={this.onRouteChange}/>
-         )
-        
-         }
-         </Route>
-         <Route path="/contact">
-            <Contact />
-         </Route>
-         <Route path="/profile">
-            <Profile />
-         </Route>
-         </Switch>
+        {displayPage}
       <Footer />  
       
     </React.Fragment>
-      </BrowserRouter>
+    
 
 
       )
