@@ -14,6 +14,8 @@ const Question = ({user}) => {
     const [personality, setPersonality] = useState("")
     const [city, setCity] = useState("Loading")
     const [result, setResult] = useState([])
+    const [lon, setLon] = useState("")
+    const [lat, setLat] = useState("")
 
     const usersPersonalites = personalities.map((personal,i)=>{
         return (
@@ -53,7 +55,9 @@ const Question = ({user}) => {
         ).then(response => response.json())
         .then(data=>{
             setResult(data.searchResults)
-        console.log(data.searchResults)
+            setLon(data.searchResults[0].fields.lng)
+            setLat(data.searchResults[0].fields.lat)
+        console.log(data.searchResults[0].fields.lng)
        
         })
     }
@@ -61,6 +65,17 @@ const Question = ({user}) => {
     const displayResult = result.map((data,i)=>{
         return <h5 key={i}>{i+1}--{data.fields.group_sic_code_name} {data.name}</h5>
     })
+
+    const onSubmitLocation = ()=>{
+        fetch(`https://api.tomtom.com/search/2/search/bank.json?countrySet=CA&lat=${lat}&lon=${lon}&radius=5000&key=cGrI2bj3NGTOdZonqxpJnqGn31YxqZLi`)
+        .then(response => response.json())
+        .then(data=>{
+             console.log(data)
+       
+        })
+
+    }
+    
     
     return ( 
         <React.Fragment>
@@ -85,6 +100,7 @@ const Question = ({user}) => {
               {city}
             </p>
             {displayResult}
+            <button onClick ={onSubmitLocation}>Location</button>
         </div>
         </React.Fragment>
      );
