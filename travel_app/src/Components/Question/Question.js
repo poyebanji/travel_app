@@ -14,6 +14,7 @@ const Question = ({user}) => {
     const [personality, setPersonality] = useState("")
     const [city, setCity] = useState("Loading")
     const [result, setResult] = useState([])
+    const [location, setLocation] = useState([])
     const [lon, setLon] = useState("")
     const [lat, setLat] = useState("")
 
@@ -47,34 +48,43 @@ const Question = ({user}) => {
         fetch('http://localhost:3000/questions', options)
         .then(response => response.json())
         .then(data => {
+            const searchCity = data
             setCity(data)
-            console.log(data)
-        })
-        fetch(`https://www.mapquestapi.com/search/v2/radius?origin=${city},+AB&radius=50&maxMatches=5&ambiguities=ignore&hostedData=mqap.ntpois|group_sic_code=?|701111&outFormat=json&key=zEOA7EFpBlhIdscffyFHdMO1PthS2OVM`
+            console.log(searchCity)
+            fetch(`https://www.mapquestapi.com/search/v2/radius?origin=${searchCity}&radius=50&maxMatches=5&ambiguities=ignore&hostedData=mqap.ntpois|group_sic_code=?|703301&outFormat=json&key=zEOA7EFpBlhIdscffyFHdMO1PthS2OVM`
 
-        ).then(response => response.json())
-        .then(data=>{
-            setResult(data.searchResults)
-            setLon(data.searchResults[0].fields.lng)
-            setLat(data.searchResults[0].fields.lat)
-        console.log(data.searchResults[0].fields.lng)
-       
+            ).then(response => response.json())
+            .then(data=>{
+                setResult(data.searchResults)
+                setLon(data.searchResults[0].fields.lng)
+                setLat(data.searchResults[0].fields.lat)
+            console.log(data.searchResults, data.searchResults[0].fields.lat)
+           
+            })
         })
+        .then(onSubmitLocation())
+        
     }
-
     const displayResult = result.map((data,i)=>{
-        return <h5 key={i}>{i+1}--{data.fields.group_sic_code_name} {data.name}</h5>
+        return <h5 key={i}>{i+1}--{data.fields.group_sic_code_name}--{data.fields.name}--{data.fields.phone}</h5>
     })
 
+
+
     const onSubmitLocation = ()=>{
-        fetch(`https://api.tomtom.com/search/2/search/bank.json?countrySet=CA&lat=${lat}&lon=${lon}&radius=5000&key=cGrI2bj3NGTOdZonqxpJnqGn31YxqZLi`)
+        fetch(`https://api.tomtom.com/search/2/search/resort.json?countrySet=CA&lat=${lat}&lon=${lon}&radius=5000&key=cGrI2bj3NGTOdZonqxpJnqGn31YxqZLi`)
         .then(response => response.json())
         .then(data=>{
-             console.log(data)
+             console.log(data.results)
+             setLocation(data.results)
        
         })
 
     }
+
+    const displayLocation = location.map((data,i)=>{
+        return <h5 key={i}>{i+1}--{data.poi.name}--{data.poi.phone}</h5>
+    })
     
     
     return ( 
@@ -100,7 +110,8 @@ const Question = ({user}) => {
               {city}
             </p>
             {displayResult}
-            <button onClick ={onSubmitLocation}>Location</button>
+            <button >Location</button>
+            {displayLocation}
         </div>
         </React.Fragment>
      );
