@@ -1,0 +1,11 @@
+.body {
+  position: relative;
+}
+
+.wrap {
+  position: relative;
+  top: 10vh;
+  z-index: 1;
+  font-weight: 800;
+  font-size: 5rem;
+}

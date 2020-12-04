@@ -4,7 +4,7 @@ import { useTrail, animated } from 'react-spring';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import 'tachyons';
+//import 'tachyons';
 
 // landing animation
 const fast = { tension: 1200, friction: 40 }
