@@ -62,7 +62,7 @@ const Question = ({user}) => {
            
             })
         })
-        .then(onSubmitLocation())
+        
         
     }
     const displayResult = result.map((data,i)=>{
@@ -110,7 +110,7 @@ const Question = ({user}) => {
               {city}
             </p>
             {displayResult}
-            <button >Location</button>
+            <button onClick={onSubmitLocation}>Location</button>
             {displayLocation}
         </div>
         </React.Fragment>
