@@ -1,12 +1,16 @@
 import React from 'react';
-import {Nav, Navbar, Button} from 'react-bootstrap'
+import {Nav, Navbar, Button} from 'react-bootstrap';
+import NavbarPage from '../Landing/LandingPageComponents/NavbarPage';
+
 
 const Navigation = ({onRouteChange, isSignedIn}) => {
 if(isSignedIn){
   return(
     <React.Fragment>
-<Navbar bg="primary" variant="dark">
-<Navbar.Brand onClick = {()=>onRouteChange('signin')}>Logo</Navbar.Brand>
+<Navbar bg="transparent" variant="light">
+<Navbar.Brand onClick = {()=>onRouteChange('signin')}>
+  <NavbarPage />
+  </Navbar.Brand>
 <Nav className="mr-auto">
 <Nav.Link onClick = {()=>onRouteChange('home')} >Home</Nav.Link>
 <Nav.Link onClick = {()=>onRouteChange('learnMore')} >Learn More</Nav.Link>
@@ -23,8 +27,10 @@ if(isSignedIn){
 } else {
   return(
     <React.Fragment>
-<Navbar bg="primary" variant="dark">
-<Navbar.Brand onClick = {()=>onRouteChange('signin')}>Logo</Navbar.Brand>
+<Navbar bg="transparent" variant="light">
+<Navbar.Brand onClick = {()=>onRouteChange('signin')}>
+  <NavbarPage />
+</Navbar.Brand>
 <Nav className="mr-auto">
 <Nav.Link onClick = {()=>onRouteChange('signout')} >Home</Nav.Link>
 <Nav.Link onClick = {()=>onRouteChange('learnMore')} >Learn More</Nav.Link>

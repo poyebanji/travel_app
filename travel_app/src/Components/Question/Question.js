@@ -89,10 +89,10 @@ const Question = ({user}) => {
     
     return ( 
         <React.Fragment>
-        <div id="main-question-area" className="container-md personality-area">
+        <div id="main-question-area" className="mw-100 mw8-ns center ph5-l ph4 z-1 relative mt4">
             
-            <h3>Welcome {user.name}</h3>
-            <h3 className="personality-heading">What kind of personality do you have?</h3>
+            <h3 className='f3 mb3 db tc'>Welcome {user.name}</h3>
+            <h3 className='mb3 fw8 pb2 pr3 tc'>What is your travel personality?</h3>
             <form id="question-form" className="personality-selectors">
                 {usersPersonalites}
                 <button onClick={(e) => {
@@ -103,14 +103,17 @@ const Question = ({user}) => {
                     Submit
                 </button>
             </form>
+
         </div>
         <hr/>
-        <div id="result-area" className="container-md result-area">
-            <p>
+        <div id="result-area" className="mw-100 mw8-ns center ph5-l ph4 z-1 relative mt4">
+           <p className='tc i f4 blue'>Drum ROLL!!! Your vacation destination is ...</p>
+           <p className='f2 mb3 db tc'>
               {city}
             </p>
             {displayResult}
-            <button onClick={onSubmitLocation}>Location</button>
+            <p className='f4 mt3 mb3 i tc'>Click <button className='underline i grow' onClick={onSubmitLocation}>here</button> to view resort locations in your vacation destination</p>
+            
             {displayLocation}
         </div>
         </React.Fragment>

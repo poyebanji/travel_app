@@ -54,7 +54,7 @@ onSubmitSignin = (event)=> {
     // const {onRouteChange} = this.props
     return (
       <React.Fragment>
-      <label htmlFor="username">USERNAME</label>
+      <label htmlFor="username">EMAIL</label>
       <input type="text" id="username" onChange={this.onEmailChange} />
       <label htmlFor="password" >PASSWORD</label>
       <input type="text" id="password"  onChange={this.onPasswordChange}/>

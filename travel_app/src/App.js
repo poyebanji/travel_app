@@ -18,6 +18,7 @@ import LearnMore from "./Components/LearnMore/LearMore"
 //   isSignedIn:false
 //  }
 
+
 class App extends Component {
   state = { 
     route:"signout" ,
@@ -68,14 +69,14 @@ onRouteChange = (route)=> {
     } 
     return (
       
-
-    
-            <React.Fragment>
+               <div>
+             
          <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
+        
         {displayPage}
       <Footer />  
       
-    </React.Fragment>
+    </div>
     
 
 

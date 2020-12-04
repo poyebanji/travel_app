@@ -1,11 +1,11 @@
 import React from 'react';
-import Navbar from './LandingPageComponents/Navbar'
+
+// import NavbarPage from './LandingPageComponents/NavbarPage'
 import MainText from './LandingPageComponents/MainText'
-import ImageLarge from './LandingPageComponents/ImageLarge';
+// import ImageLarge from './LandingPageComponents/ImageLarge';
 import MainButton from './LandingPageComponents/MainButton'
 
 const Landing = ({onRouteChange})=> {
-  
 
  
         const largeMessage = "Adventure is waiting"
@@ -13,20 +13,16 @@ const Landing = ({onRouteChange})=> {
         const signIn = "sign in/ register"
         
         return (
-            <div className="container">
+            
+            <div className="container tc">
+              
                 <div className="row">
                     <div className="col">
-                        <Navbar />
+                        
+                      <div>  <MainText largeMessage={largeMessage} mediumMessage={mediumMessage} /> </div>
+                       <div className='mb6 mt5'> <MainButton onRouteChange={onRouteChange} text={signIn}/> </div>
                     </div>
-                </div>
-                <div className="row">
-                    <div className="col">
-                        <MainText largeMessage={largeMessage} mediumMessage={mediumMessage} />
-                        <MainButton onRouteChange={onRouteChange} text={signIn}/>
-                    </div>
-                    <div className="col">
-                        <ImageLarge />
-                    </div>
+                    
                 </div>
             </div>
         )
