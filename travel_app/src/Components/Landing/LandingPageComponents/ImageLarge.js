@@ -7,7 +7,9 @@ const ImageLarge = ()=>{
             <img 
             alt="traveler" 
             src={process.env.PUBLIC_URL + 'LandingPageImages/backpacking-hongkong.jpg'} 
-            className="large-image"
+            className=" "
+            width="490"
+            height= "390"
             />
         </div>
     )
