@@ -1,5 +1,4 @@
 import React from 'react';
-
 // import NavbarPage from './LandingPageComponents/NavbarPage'
 import MainText from './LandingPageComponents/MainText'
 // import ImageLarge from './LandingPageComponents/ImageLarge';
@@ -14,11 +13,11 @@ const Landing = ({onRouteChange})=> {
         
         return (
             
-            <div className="container tc">
+            <div className="container background tc">
               
                 <div className="row">
                     <div className="col">
-                        
+                       {/* <ImageLarge />  */}
                       <div>  <MainText largeMessage={largeMessage} mediumMessage={mediumMessage} /> </div>
                        <div className='mb6 mt5'> <MainButton onRouteChange={onRouteChange} text={signIn}/> </div>
                     </div>
