@@ -7,11 +7,11 @@ const Navigation = ({onRouteChange, isSignedIn}) => {
 if(isSignedIn){
   return(
     <React.Fragment>
-<Navbar bg="transparent" variant="light">
+<Navbar className="mr-auto font-weight-bold " sticky ='top' bg="transparent" variant="light">
 <Navbar.Brand onClick = {()=>onRouteChange('signin')}>
   <NavbarPage />
   </Navbar.Brand>
-<Nav className="mr-auto">
+<Nav className="mr-auto" >
 <Nav.Link onClick = {()=>onRouteChange('home')} >Home</Nav.Link>
 <Nav.Link onClick = {()=>onRouteChange('learnMore')} >Learn More</Nav.Link>
 <Nav.Link onClick = {()=>onRouteChange('profile')} >Profile</Nav.Link>
@@ -27,7 +27,7 @@ if(isSignedIn){
 } else {
   return(
     <React.Fragment>
-<Navbar bg="transparent" variant="light">
+<Navbar className="mr-auto font-weight-bold " sticky ='top' bg="transparent" variant="light">
 <Navbar.Brand onClick = {()=>onRouteChange('signin')}>
   <NavbarPage />
 </Navbar.Brand>

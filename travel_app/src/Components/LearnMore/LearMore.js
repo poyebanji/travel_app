@@ -5,7 +5,7 @@ import './LearnMore.css'
 
 
 
-const LearnMore = () =>  {
+const LearnMore = ({onRouteChange}) =>  {
   return(
     <div>
       <div class="ui center aligned container body"> 
@@ -32,7 +32,7 @@ const LearnMore = () =>  {
           <div class="ui raised segment">
            <div >
              <img class="ui fluid image" fluid src={travel} alt="" size='mini'></img>
-             <h4>Sign up/Login</h4>
+             <button onClick = {()=>onRouteChange('signin')} ><h4>Sign up/Login</h4></button>
            </div>
          </div>
        </div>

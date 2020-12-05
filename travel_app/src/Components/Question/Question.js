@@ -24,7 +24,7 @@ const Question = ({user}) => {
                 <label htmlFor={i}><p>{personal}</p></label>
                 <input 
                 name='personalitySelection' 
-                 
+               
                 id={i} 
                 type="radio"
                 onClick={(e)=>{
@@ -60,14 +60,18 @@ const Question = ({user}) => {
                 setLat(data.searchResults[0].fields.lat)
             console.log(data.searchResults, data.searchResults[0].fields.lat)
            
-            })
+            }).then(()=>setLocation([]))
         })
         
         
     }
-    const displayResult = result.map((data,i)=>{
+
+    
+    const displayResult = result 
+    ?result.map((data,i)=>{
         return <h5 key={i}>{i+1}--{data.fields.group_sic_code_name}--{data.fields.name}--{data.fields.phone}</h5>
     })
+    :null
 
 
 
@@ -82,9 +86,11 @@ const Question = ({user}) => {
 
     }
 
-    const displayLocation = location.map((data,i)=>{
+    const displayLocation = location 
+    ?location.map((data,i)=>{
         return <h5 key={i}>{i+1}--{data.poi.name}--{data.poi.phone}</h5>
     })
+    :null
     
     
     return ( 
@@ -95,17 +101,19 @@ const Question = ({user}) => {
             <h3 className='mb3 fw8 pb2 pr3 tc'>What is your travel personality?</h3>
             <form id="question-form" className="personality-selectors">
                 {usersPersonalites}
-                <button onClick={(e) => {
+                <button disabled={!personality} onClick={(e) => {
                     e.preventDefault()
                     console.log(personality)
                     matchCity(personality)
+                    
                 }}>
                     Submit
                 </button>
             </form>
 
         </div>
-        <hr/>
+        {city !== 'Loading'
+        ?
         <div id="result-area" className="mw-100 mw8-ns center ph5-l ph4 z-1 relative mt4">
            <p className='tc i f4 blue'>Drum ROLL!!! Your vacation destination is ...</p>
            <p className='f2 mb3 db tc'>
@@ -116,6 +124,11 @@ const Question = ({user}) => {
             
             {displayLocation}
         </div>
+        :
+                null
+        }
+        <hr/>
+        
         </React.Fragment>
      );
 }
