@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { useTrail, animated } from 'react-spring';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'tachyons';
 
+<<<<<<< HEAD
 // landing animation
 // const fast = { tension: 1200, friction: 40 }
 // const slow = { mass: 10, tension: 200, friction: 50 }
@@ -33,6 +33,13 @@ import 'tachyons';
 ReactDOM.render(
   <React.StrictMode>
     {/* <Goo /> */}
+=======
+
+
+ReactDOM.render(
+  <React.StrictMode>
+ 
+>>>>>>> f3fd8336b4f87e24bd52c0f16b53c4ca9069ae16
     <App />
   </React.StrictMode>,
   document.getElementById('root')
