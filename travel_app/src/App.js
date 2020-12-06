@@ -68,7 +68,7 @@ onRouteChange = (route)=> {
       displayPage =  <LearnMore onRouteChange={this.onRouteChange} />
     } else if (route === "test") {
       displayPage = <CardArray/>
-    }
+    } 
     return (
       
                <div>
