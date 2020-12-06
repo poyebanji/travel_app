@@ -12,7 +12,7 @@ import Footer from "./Components/Footer/Footer";
 import Question from "./Components/Question/Question";
 import Login from "./Components/Login/login";
 import LearnMore from "./Components/LearnMore/LearMore"
-
+import CardArray from './Components/Question/QuestionBuild/CardArray'
 // const initialState = { 
 //   route:"signout" ,
 //   isSignedIn:false
@@ -66,7 +66,9 @@ onRouteChange = (route)=> {
       displayPage =  <Profile onRouteChange={this.onRouteChange} />
     } else if (route==='learnMore') {
       displayPage =  <LearnMore onRouteChange={this.onRouteChange} />
-    } 
+    } else if (route === "test") {
+      displayPage = <CardArray/>
+    }
     return (
       
                <div>
