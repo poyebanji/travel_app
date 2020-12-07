@@ -1,15 +1,20 @@
 import React from 'react';
 
-const Profile = () => {
+const Profile = ({user}) => {
     return (
         <div>
-            <h1>Profile Container Under Construction</h1>
-                <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras gravida,
-      risus at dapibus aliquet, elit quam scelerisque tortor, nec accumsan eros
-      nulla interdum justo. Pellentesque dignissim, sapien et congue rutrum,
-      lorem tortor dapibus turpis, sit amet vestibulum eros mi et odio.
-    </p>
+            <div>
+            <label> Name:</label>
+            <div>{user.name}</div>
+            <label> email:</label>
+            <div>{user.email}</div>
+            <label> entries:</label>
+            <div>{user.entries}</div>
+            <label> Date Joined:</label>
+            <div>{user.joined}</div>
+
+            </div>      
+ 
         </div>
       );
 }

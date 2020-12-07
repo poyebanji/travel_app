@@ -21,7 +21,7 @@ import CardArray from './Components/Question/QuestionBuild/CardArray'
 
 class App extends Component {
   state = { 
-    route:"signout" ,
+    route:"test" ,
     isSignedIn:false,
     user:{
       name: "",
@@ -35,7 +35,8 @@ loadUser = (data)=>{
      this.setState({user:{
        name:data.name,
        email:data.email,
-       joined:data.joined
+       joined:data.joined,
+       entries:data.entries
      }
 
      })
@@ -63,7 +64,7 @@ onRouteChange = (route)=> {
     }  else if (route==='contact') {
         displayPage =  <Contact onRouteChange={this.onRouteChange} />
     } else if (route==='profile') {
-      displayPage =  <Profile onRouteChange={this.onRouteChange} />
+      displayPage =  <Profile onRouteChange={this.onRouteChange} user={user} />
     } else if (route==='learnMore') {
       displayPage =  <LearnMore onRouteChange={this.onRouteChange} />
     } else if (route === "test") {
