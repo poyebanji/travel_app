@@ -1,8 +1,13 @@
-import React from 'react'
+import React from 'react';
+import './ResultBuild.css';
+import { Image } from 'semantic-ui-react';
+import hiking from './hiking.jpg';
 
 const GetCity = (props) => {
     return(
-        <div>
+        
+            <div  className='city-background'>
+
             <form onSubmit={props.cityFunc}>
                 <label htmlFor="city-label">Enter city: </label>
                 <input required type="text" name="city-label"/>
@@ -11,7 +16,12 @@ const GetCity = (props) => {
                 <input required type="text" name="results-label" />
                 <button type="submit">Submit</button>
             </form>
+            <Image src={hiking} size='massive' />
         </div>
+
+       
+
+        
     )
 }
 

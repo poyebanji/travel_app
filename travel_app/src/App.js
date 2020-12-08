@@ -7,7 +7,7 @@ import Navigation from "./Components/Navigation/Navigation"
 import Contact from "./Components/Contact/Contact"
 import Profile from "./Components/Profile/Profile"
 import "./App.css"
-import Landing from "./Components/Landing/Landing";
+import LandingNew from "./Components/Landing/LandingNew";
 import Footer from "./Components/Footer/Footer";
 import Question from "./Components/Question/Question";
 import Login from "./Components/Login/login";
@@ -62,7 +62,7 @@ onRouteChange = (route)=> {
     } else if (route==='signin') {
       displayPage =  <Login loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
     } else if (route==='signout') {
-      displayPage =  <Landing onRouteChange={this.onRouteChange} />
+      displayPage =  <LandingNew onRouteChange={this.onRouteChange} />
     }  else if (route==='contact') {
         displayPage =  <Contact onRouteChange={this.onRouteChange} />
     } else if (route==='profile') {
