@@ -2,7 +2,7 @@
   text-align: center;
 }
 /* reset styles */
-html,body, body * { 
+/* html,body, body * { 
   box-sizing: border-box; 
   font-family: 'Open Sans', sans-serif; 
   margin:0;
@@ -10,7 +10,7 @@ html,body, body * {
   color:inherit;
   background-color:inherit;
  
-}
+} */
 
 body {
   /* background-image: url(pic.jpg); if we want a bg img*/ 
@@ -128,12 +128,4 @@ button.active {
     padding-left: 50px;
 }
 
-.center {
-    text-align: center;
-    font-size: 2rem;
-}
 
-.inline {
-  display: flex;
-  justify-content: center;
-}
