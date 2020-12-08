@@ -11,11 +11,9 @@ function App() {
 
       <React.Fragment >
         <div className='footer-container'>
-        <div>
-      Footer Under Construction
-      </div >
-      <FontAwesomeIcon icon={faTwitter} />
-      <FontAwesomeIcon icon={faFacebookF} />
+
+      <FontAwesomeIcon icon={faTwitter}  />&nbsp;
+      <FontAwesomeIcon icon={faFacebookF} />&nbsp;
       <FontAwesomeIcon icon={faInstagram} />  
       </div>
 

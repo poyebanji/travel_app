@@ -4,6 +4,7 @@ import Registration from "./Registration/Registration"
 import Signin from "./Signin/Signin"
 
 
+
 // class Login extends Component {
 function Login({onRouteChange, loadUser}) {
     // state = {  }
@@ -36,9 +37,9 @@ function Login({onRouteChange, loadUser}) {
   
     return (
       <React.Fragment>
-       
+      <div className="container-login">
       <div className="login-register-wrapper">
-        <div className="nav-buttons">
+        <div className="nav-buttons center ">
           <animated.button
             onClick={loginClicked}
             id="loginBtn"
@@ -46,7 +47,9 @@ function Login({onRouteChange, loadUser}) {
           >
             Login
           </animated.button>
+         
           <animated.button
+          className='signinbtn'
             onClick={registerClicked}
             id="registerBtn"
             style={registerBtnProps}
@@ -67,7 +70,7 @@ function Login({onRouteChange, loadUser}) {
         </animated.div>
       </div>
       
-      
+      </div>
       </React.Fragment>
     );
 //   };
