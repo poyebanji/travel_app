@@ -45,7 +45,7 @@ const GetCity = (props) => {
                     </Form.Text>
                 </Form.Group>
                 <Button variant="primary" type="submit">
-                Submit
+                    Submit
                 </Button>
             </Form>
         </div>

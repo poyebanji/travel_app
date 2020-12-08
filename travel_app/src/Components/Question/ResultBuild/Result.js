@@ -38,7 +38,7 @@ const Result = ({name, phoneNumber, address, url, category, lat, lon}) => {
         if (!url) {
             setCheckUrl("https://www.google.ca/search?q=" + name.replaceAll(' ', '+'))
         } else {
-            setCheckUrl(url)
+            setCheckUrl(`https://${url}`)
         }
     }
     useEffect(()=>{
