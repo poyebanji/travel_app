@@ -1,136 +1,98 @@
-import React, {useState} from 'react'
+import React, { useState, useEffect } from 'react'
+import ResultArray from './ResultBuild/ResultArray';
+import CardArray from './QuestionBuild/CardArray'
+import GetCity from './ResultBuild/GetCity'
+const googleApiKey = "AIzaSyASydWt1CKvBI1ciV_oMeO3TzmmcGVVm24"
 
 
-const personalities = [
-    'Adventurous',
-    'Relaxing',
-    'Spiritual',
-    'Traditional',
-    'Spontaneous'
-]
+const Question = () => {
+    const [display, setDisplay] = useState('City')
+    const [city, setCity] = useState('')
+    const [lat, setLat] = useState(null)
+    const [lon, setLon] = useState(null)
+    const [numResults, setNumResults] = useState(null)
+    const [categories, setCategories] = useState([])
+    const [resultsArray, setResultsArray] = useState([])
+    const [photo, setPhoto] = useState([])
+    let displayPage;
 
-const Question = ({user}) => {
- 
-    const [personality, setPersonality] = useState("")
-    const [city, setCity] = useState("Loading")
-    const [result, setResult] = useState([])
-    const [location, setLocation] = useState([])
-    const [lon, setLon] = useState("")
-    const [lat, setLat] = useState("")
-
-    const usersPersonalites = personalities.map((personal,i)=>{
-        return (
-            <div key={personal.toString()}>
-                <label htmlFor={i}><p>{personal}</p></label>
-                <input 
-                name='personalitySelection' 
-               
-                id={i} 
-                type="radio"
-                onClick={(e)=>{
-                    setPersonality(e.target.defaultValue)
-                }}
-                value={personal}/>
-                <br/>
-            </div>
-        )
-    })
-
-    function matchCity(personalityResult) {
-        let options = {
-            method: 'POST',
-            mode: 'cors',
-            headers: {
-                'Content-Type':'application/json'
-            },
-            body: JSON.stringify({personality: personalityResult})
+    useEffect(()=>{
+        if (lat !== null && lon !== null){
+            console.log(lat, lon)
+            setDisplay('Card')
         }
-        fetch('http://localhost:3000/questions', options)
+    }, [lat,lon])
+
+    useEffect(()=>{
+        if (display === 'Card') {
+            if (resultsArray.length > 0) {
+                setDisplay('Result')
+            }
+        }
+    }, [resultsArray])
+
+    function startAgain(e) {
+        if (e) {
+        setDisplay('City')
+        setCity('')
+        setLat(null)
+        setLon(null)
+        setNumResults(null)
+        setCategories([])
+        setResultsArray([])
+        }
+        
+    }
+
+    function getCoordsAndResultsCity(e) {
+        e.preventDefault()
+        setCity(e.target[0].value)
+        setNumResults(e.target[1].value)
+        fetch(`https://api.tomtom.com/search/2/geocode/${e.target[0].value}.json?limit=1&countrySet=CA&key=w9lL7lmL6DnY6nsGPzZQVoF6AcepPNsN`)
         .then(response => response.json())
         .then(data => {
-            const searchCity = data
-            setCity(data)
-            console.log(searchCity)
-            fetch(`https://www.mapquestapi.com/search/v2/radius?origin=${searchCity}&radius=50&maxMatches=5&ambiguities=ignore&hostedData=mqap.ntpois|group_sic_code=?|703301&outFormat=json&key=zEOA7EFpBlhIdscffyFHdMO1PthS2OVM`
-
-            ).then(response => response.json())
-            .then(data=>{
-                setResult(data.searchResults)
-                setLon(data.searchResults[0].fields.lng)
-                setLat(data.searchResults[0].fields.lat)
-            console.log(data.searchResults, data.searchResults[0].fields.lat)
-           
-            }).then(()=>setLocation([]))
+            setLat(data.results[0].position.lat)
+            setLon(data.results[0].position.lon)
         })
-        
-        
     }
 
+    function getCategories(val) {
+        setCategories(val)
+        getResult(val)
+        
+    }
     
-    const displayResult = result 
-    ?result.map((data,i)=>{
-        return <h5 key={i}>{i+1}--{data.fields.group_sic_code_name}--{data.fields.name}--{data.fields.phone}</h5>
-    })
-    :null
-
-
-
-    const onSubmitLocation = ()=>{
-        fetch(`https://api.tomtom.com/search/2/search/resort.json?countrySet=CA&lat=${lat}&lon=${lon}&radius=5000&key=cGrI2bj3NGTOdZonqxpJnqGn31YxqZLi`)
+    async function getResult(catArray) {
+        console.log(catArray)
+        let categoryResultsArray = []
+        
+        await fetch(`https://api.tomtom.com/search/2/search/${catArray[0]}.json?limit=${numResults}&countrySet=CA&key=w9lL7lmL6DnY6nsGPzZQVoF6AcepPNsN&lat=${lat}&lon=${lon}`)
         .then(response => response.json())
-        .then(data=>{
-             console.log(data.results)
-             setLocation(data.results)
-       
+        .then(data => categoryResultsArray.push(data.results))
+        await fetch(`https://api.tomtom.com/search/2/search/${catArray[1]}.json?limit=${numResults}&countrySet=CA&key=w9lL7lmL6DnY6nsGPzZQVoF6AcepPNsN&lat=${lat}&lon=${lon}`)
+        .then(response => response.json())
+        .then(data => categoryResultsArray.push(data.results))
+        await fetch(`https://api.tomtom.com/search/2/search/${catArray[2]}.json?limit=${numResults}&countrySet=CA&key=w9lL7lmL6DnY6nsGPzZQVoF6AcepPNsN&lat=${lat}&lon=${lon}`)
+        .then(response => response.json())
+        .then(data => {
+            categoryResultsArray.push(data.results)
+            console.log(categoryResultsArray)
+            setResultsArray(categoryResultsArray)
         })
-
     }
 
-    const displayLocation = location 
-    ?location.map((data,i)=>{
-        return <h5 key={i}>{i+1}--{data.poi.name}--{data.poi.phone}</h5>
-    })
-    :null
-    
-    
-    return ( 
-        <React.Fragment>
-        <div id="main-question-area" className="mw-100 mw8-ns center ph5-l ph4 z-1 relative mt4">
-            
-            <h3 className='f3 mb3 db tc'>Welcome {user.name}</h3>
-            <h3 className='mb3 fw8 pb2 pr3 tc'>What is your travel personality?</h3>
-            <form id="question-form" className="personality-selectors">
-                {usersPersonalites}
-                <button disabled={!personality} onClick={(e) => {
-                    e.preventDefault()
-                    console.log(personality)
-                    matchCity(personality)
-                    
-                }}>
-                    Submit
-                </button>
-            </form>
+    if (display === 'City') {
+        displayPage = <GetCity cityFunc={getCoordsAndResultsCity}/>
+    } else if (display === 'Card') {
+        displayPage = <CardArray catFunc={getCategories}/>
+    } else if (display === 'Result') {
+        displayPage = <ResultArray poiResultsArray={resultsArray} reset={startAgain}/>
+    }
 
+    return(
+        <div>
+            {displayPage}
         </div>
-        {city !== 'Loading'
-        ?
-        <div id="result-area" className="mw-100 mw8-ns center ph5-l ph4 z-1 relative mt4">
-           <p className='tc i f4 blue'>Drum ROLL!!! Your vacation destination is ...</p>
-           <p className='f2 mb3 db tc'>
-              {city}
-            </p>
-            {displayResult}
-            <p className='f4 mt3 mb3 i tc'>Click <button className='underline i grow' onClick={onSubmitLocation}>here</button> to view resort locations in your vacation destination</p>
-            
-            {displayLocation}
-        </div>
-        :
-                null
-        }
-        <hr/>
-        
-        </React.Fragment>
-     );
+    )
 }
- 
-export default Question;
+export default Question

@@ -13,6 +13,8 @@ import Question from "./Components/Question/Question";
 import Login from "./Components/Login/login";
 import LearnMore from "./Components/LearnMore/LearMore"
 import CardArray from './Components/Question/QuestionBuild/CardArray'
+import Result from './Components/Question/ResultBuild/Result'
+import ResultArray from './Components/Question/ResultBuild/ResultArray'
 // const initialState = { 
 //   route:"signout" ,
 //   isSignedIn:false
@@ -68,7 +70,9 @@ onRouteChange = (route)=> {
       displayPage =  <LearnMore onRouteChange={this.onRouteChange} />
     } else if (route === "test") {
       displayPage = <CardArray/>
-    } 
+    } else if (route === 'result') {
+      displayPage = <ResultArray />
+    }
     return (
       
                <div>

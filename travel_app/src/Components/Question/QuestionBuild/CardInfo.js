@@ -39,7 +39,8 @@ const styles = {
     textAlign: 'center'
   },
   listContainer: {
-    margin: '20px 0'
+    marginBottom: '40px',
+    marginTop: '10px'
   }
 };
 
@@ -55,14 +56,12 @@ const CardInfo = (props) => {
           <Card.Text style={styles.cardText}>
             {props.cardDescription}
           </Card.Text>
-          <Card.Text>
-            <ListGroup style={styles.listContainer} variant='flush'>
-              {props.activities.map((item, i)=>{
-                return <ListGroup.Item key={i} style={styles.cardBullet}>{item}</ListGroup.Item>
-              })}
-            </ListGroup>
-          </Card.Text>
-          <Button style={styles.button} size="lg"  variant="outline-primary">Select</Button>
+          <ListGroup style={styles.listContainer} variant='flush'>
+            {props.activities.map((item, i)=>{
+              return <ListGroup.Item key={i} style={styles.cardBullet}>{item}</ListGroup.Item>
+            })}
+          </ListGroup>
+          <Button style={styles.button} size="lg"  variant="outline-primary" onClick={()=>{props.categoryFunc(props.activities)}}>Select</Button>
         </Card.Body>
       </Card>
       

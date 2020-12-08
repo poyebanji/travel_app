@@ -48,12 +48,12 @@ function imageMap(info, title, desc, actions) {
 
 let imageArray = imageMap(imageInfo, imageTitles, imageDescriptions, imageActivities);
 
-const CardArray = () => {
+const CardArray = ({catFunc}) => {
     return(
         <div className='container' >
             {imageArray.map((item, i)=>{
                 return (
-                    <CardInfo key={i} cardTitle={item.imageTitle} cardImage={item.imageUrl} cardDescription={item.imageDescription} activities={item.imageActivity} />
+                    <CardInfo key={i} cardTitle={item.imageTitle} cardImage={item.imageUrl} cardDescription={item.imageDescription} activities={item.imageActivity} categoryFunc={catFunc}/>
                 )
             })}
         </div>
