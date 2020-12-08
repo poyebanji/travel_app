@@ -2,7 +2,6 @@ import React from 'react';
 import './ResultBuild.css';
 import { Image } from 'semantic-ui-react';
 import hiking from './hiking.jpg';
-import React from 'react'
 import { Form, Button } from 'react-bootstrap'
 
 const styles = {
@@ -65,8 +64,9 @@ const GetCity = (props) => {
                 </Button>
             </Form>
         </div>
+        </div>
 
-       
+    
 
         
     )
