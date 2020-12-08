@@ -1,6 +1,6 @@
 import React,{ useState, useEffect } from 'react'
 import Result from './Result'
-
+import { Button } from 'react-bootstrap'
 
 const ResultArray = (props) => {
     const [restart, setRestart] = useState('false')
@@ -14,7 +14,11 @@ const ResultArray = (props) => {
     
     return(
         <div>
-            <button onClick={runReset} >Go back to beginning</button>
+            <Button 
+            onClick={runReset} 
+            variant="outline-primary" 
+            size="lg" 
+            style={{margin: "20px", position: "fixed"}}>Back to start</Button>
             {props.poiResultsArray.map((smallArray)=>{
                return(smallArray.map((item, i)=>{
                      return <Result 

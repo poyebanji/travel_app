@@ -44,7 +44,7 @@ const Contact = () => {
                         <Col>
                             <Form.Group controlId="emailID">
                                 <Form.Label style={styles.labelText}>Email Address</Form.Label>
-                                <Form.Control type="email" name="from_email" placeholder="name@example.com" />
+                                <Form.Control type="email" name="from_email" placeholder="name@example.com" required/>
                             </Form.Group>
                         </Col>
                     </Row>
@@ -52,13 +52,13 @@ const Contact = () => {
                         <Col>
                             <Form.Group controlId="fname">
                                 <Form.Label style={styles.labelText}>First Name</Form.Label>
-                                <Form.Control type="text" name="fname" placeholder="First Name:" />
+                                <Form.Control type="text" name="fname" placeholder="First Name:" required/>
                             </Form.Group>
                         </Col>
                         <Col>
                             <Form.Group controlId="lname">
                                 <Form.Label style={styles.labelText}>Last Name</Form.Label>
-                                <Form.Control type="text" name="lname" placeholder="Last Name:" />
+                                <Form.Control type="text" name="lname" placeholder="Last Name:" required/>
                             </Form.Group>
                         </Col>
                     </Row>
@@ -66,7 +66,7 @@ const Contact = () => {
                         <Col>
                             <Form.Group controlId="message">
                                 <Form.Label style={styles.labelText}>Message</Form.Label>
-                                <Form.Control as="textarea" name="message" rows={3} placeholder="Leave a message here" />
+                                <Form.Control as="textarea" name="message" rows={3} placeholder="Leave a message here" required />
                             </Form.Group>
                         </Col>
                     </Row>

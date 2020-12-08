@@ -32,7 +32,18 @@ const styles = {
 }
 const Result = ({name, phoneNumber, address, url, category, lat, lon}) => {
     const [photo, setPhoto] = useState("")
+    const [checkurl, setCheckUrl] = useState("")
 
+    function isUrl() {
+        if (!url) {
+            setCheckUrl("https://www.google.ca/search?q=" + name.replaceAll(' ', '+'))
+        } else {
+            setCheckUrl(`https://${url}`)
+        }
+    }
+    useEffect(()=>{
+        isUrl()
+    }, []) 
     useEffect(()=>{
         let center = `${lat},${lon}`
         fetch(`https://maps.googleapis.com/maps/api/staticmap?center=${center}&zoom=13&size=217x187&maptype=roadmap
@@ -67,7 +78,9 @@ const Result = ({name, phoneNumber, address, url, category, lat, lon}) => {
                         </Col>
                     </Row>
                     <Row>
-                        <Button style={{margin: 'auto'}} variant="primary">Find Online</Button>
+                        <a style={{margin: 'auto'}} href={checkurl} target="_blank">
+                            <Button variant="primary">Find Online</Button>
+                        </a>
                     </Row>
                 </Card.Body>
             </Card>
