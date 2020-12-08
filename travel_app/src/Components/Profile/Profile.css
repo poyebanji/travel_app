@@ -1,0 +1,26 @@
+/* Profile CSS */
+.center {
+    text-align: center;
+    font-size: 2rem;
+}
+.inline {
+    display: flex;
+    justify-content: center;
+    padding-left: 20px;
+  }
+  
+  
+  .profileBox {
+    width: "50%";
+    margin: "auto";
+    background: "antiquewhite";
+    padding: "5%";
+    font-size: "1.5rem";
+    border-radius: "20px";
+    background-color: "#357E85"
+  }
+  .labelText {
+    font-family: "Roboto";
+    font-size: "2rem";
+    color: "#CCEBF4"
+  }

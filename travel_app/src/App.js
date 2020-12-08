@@ -23,7 +23,7 @@ import ResultArray from './Components/Question/ResultBuild/ResultArray'
 
 class App extends Component {
   state = { 
-    route:"test" ,
+    route:"learnMore" ,
     isSignedIn:false,
     user:{
       name: "",

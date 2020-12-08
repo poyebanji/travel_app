@@ -1,8 +1,9 @@
 import React from 'react';
+import './Profile.css'
 
 const Profile = ({user}) => {
     return (
-        <div>
+        <div className= 'profileBox labelText'>
             <div className='center '>
             <div className='inline'>
             <label> Name:</label>
