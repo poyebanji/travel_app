@@ -70,7 +70,7 @@ const Contact = () => {
                             </Form.Group>
                         </Col>
                     </Row>
-                    <button type='submit' class="custom-button">SUBMIT</button>
+                    <button style={styles.labelText} type='submit' class="custom-button">SUBMIT</button>
                 </form>
         </div>
       );

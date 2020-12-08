@@ -22,8 +22,8 @@ const GetCity = (props) => {
         
             <div  className='city-background'>
 
-{/* <div>
-            <Form style={{width: "30%", margin: "20px"}} onSubmit={props.cityFunc}>
+<div>
+            <Form style={{width: "100%", margin: "0px"}} onSubmit={props.cityFunc}>
                 <Form.Group controlId="formCity">
                     <Form.Label>Enter your city: </Form.Label>
                     <Form.Control type="text" placeholder="enter your city: " />
@@ -39,7 +39,7 @@ const GetCity = (props) => {
                     Submit
                 </Button>
             </Form>
-        </div> */}
+        </div>
 
             {/* <form onSubmit={props.cityFunc}>
                 <label htmlFor="city-label">Enter city: </label>
@@ -50,7 +50,7 @@ const GetCity = (props) => {
                 <button type="submit">Submit</button>
             </form> */}
             
-         <div style={styles.root}>
+         {/* <div style={styles.root}>
              <form onSubmit={props.cityFunc}>
                  <div style={styles.outer}>
                      <div style={styles.inner}>
@@ -64,7 +64,7 @@ const GetCity = (props) => {
                  </div>
                  <button type="submit">Submit</button>
              </form>
-         </div>
+         </div> */}
          <Image src={hiking} size='massive' />
 
         </div>

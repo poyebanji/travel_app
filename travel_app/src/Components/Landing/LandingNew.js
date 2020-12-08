@@ -15,10 +15,13 @@ const mainParagraph = 'Join travel app and discover amazing adventures around yo
 const LandingNew = () => {
   return (
 
-    <div className="container">  
-      <h1 className="h1text">{mainText}</h1>
+    <div className="container-landing">  
+    <div>
+    <h1 className="h1text">{mainText}</h1>
       <h3>{mainParagraph}</h3> 
-      <Image src={tourist} size='huge' />
+    </div>
+
+      <Image src={tourist} size='massive' />
       {/* <img class="ui fluid image" fluid src={tourist} alt="" size='medium' ></img> */}
         
         

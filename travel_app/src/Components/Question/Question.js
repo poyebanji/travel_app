@@ -66,13 +66,13 @@ const Question = () => {
         console.log(catArray)
         let categoryResultsArray = []
         
-        await fetch(`https://api.tomtom.com/search/2/poiSearch/${catArray[0]}.json?limit=${numResults}&countrySet=CA&key=w9lL7lmL6DnY6nsGPzZQVoF6AcepPNsN&lat=${lat}&lon=${lon}`)
+        await fetch(`https://api.tomtom.com/search/2/search/${catArray[0]}.json?limit=${numResults}&countrySet=CA&key=w9lL7lmL6DnY6nsGPzZQVoF6AcepPNsN&lat=${lat}&lon=${lon}`)
         .then(response => response.json())
         .then(data => categoryResultsArray.push(data.results))
-        await fetch(`https://api.tomtom.com/search/2/poiSearch/${catArray[1]}.json?limit=${numResults}&countrySet=CA&key=w9lL7lmL6DnY6nsGPzZQVoF6AcepPNsN&lat=${lat}&lon=${lon}`)
+        await fetch(`https://api.tomtom.com/search/2/search/${catArray[1]}.json?limit=${numResults}&countrySet=CA&key=w9lL7lmL6DnY6nsGPzZQVoF6AcepPNsN&lat=${lat}&lon=${lon}`)
         .then(response => response.json())
         .then(data => categoryResultsArray.push(data.results))
-        await fetch(`https://api.tomtom.com/search/2/poiSearch/${catArray[2]}.json?limit=${numResults}&countrySet=CA&key=w9lL7lmL6DnY6nsGPzZQVoF6AcepPNsN&lat=${lat}&lon=${lon}`)
+        await fetch(`https://api.tomtom.com/search/2/search/${catArray[2]}.json?limit=${numResults}&countrySet=CA&key=w9lL7lmL6DnY6nsGPzZQVoF6AcepPNsN&lat=${lat}&lon=${lon}`)
         .then(response => response.json())
         .then(data => {
             categoryResultsArray.push(data.results)
