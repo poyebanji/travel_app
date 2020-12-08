@@ -22,31 +22,7 @@ const GetCity = (props) => {
         
             <div  className='city-background'>
 
-            <form onSubmit={props.cityFunc}>
-                <label htmlFor="city-label">Enter city: </label>
-                <input required type="text" name="city-label"/>
-                <br />
-                <label htmlFor="results-label">Number of results per category: </label>
-                <input required type="text" name="results-label" />
-                <button type="submit">Submit</button>
-            </form>
-            <Image src={hiking} size='massive' />
-        // <div style={styles.root}>
-        //     <form onSubmit={props.cityFunc}>
-        //         <div style={styles.outer}>
-        //             <div style={styles.inner}>
-        //                 <label  htmlFor="city-label">Enter city: </label>
-        //                 <label htmlFor="results-label">Number of results per category: </label>
-        //             </div>
-        //             <div style={styles.inner}>
-        //                 <input required type="text" name="city-label"/>
-        //                 <input required type="text" name="results-label" />
-        //             </div>
-        //         </div>
-        //         <button type="submit">Submit</button>
-        //     </form>
-        // </div>
-        <div>
+{/* <div>
             <Form style={{width: "30%", margin: "20px"}} onSubmit={props.cityFunc}>
                 <Form.Group controlId="formCity">
                     <Form.Label>Enter your city: </Form.Label>
@@ -63,7 +39,34 @@ const GetCity = (props) => {
                     Submit
                 </Button>
             </Form>
-        </div>
+        </div> */}
+
+            {/* <form onSubmit={props.cityFunc}>
+                <label htmlFor="city-label">Enter city: </label>
+                <input required type="text" name="city-label"/>
+                <br />
+                <label htmlFor="results-label">Number of results per category: </label>
+                <input required type="text" name="results-label" />
+                <button type="submit">Submit</button>
+            </form> */}
+            
+         <div style={styles.root}>
+             <form onSubmit={props.cityFunc}>
+                 <div style={styles.outer}>
+                     <div style={styles.inner}>
+                         <label  htmlFor="city-label">Enter city: </label>
+                         <label htmlFor="results-label">Number of results per category: </label>
+                     </div>
+                     <div style={styles.inner}>
+                         <input required type="text" name="city-label"/>
+                         <input required type="text" name="results-label" />
+                     </div>
+                 </div>
+                 <button type="submit">Submit</button>
+             </form>
+         </div>
+         <Image src={hiking} size='massive' />
+
         </div>
 
     
