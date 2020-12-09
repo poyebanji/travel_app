@@ -1,9 +1,9 @@
-import React,{ useState, useEffect } from 'react'
+import React,{ useState } from 'react'
 import Result from './Result'
 import { Button } from 'react-bootstrap'
 
 const ResultArray = (props) => {
-    const [restart, setRestart] = useState('false')
+    // const [restart, setRestart] = useState('false')
     //need to accept props of queries and lat and lon or city
     // need func to make array of result cards for each query
     // need result card to accept props for name, address, website, category and picture

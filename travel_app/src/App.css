@@ -2,7 +2,7 @@
   text-align: center;
 }
 /* reset styles */
-/* html,body, body * { 
+html,body, body * { 
   box-sizing: border-box; 
   font-family: 'Open Sans', sans-serif; 
   margin:0;
@@ -10,7 +10,7 @@
   color:inherit;
   background-color:inherit;
  
-} */
+}
 
 body {
   /* background-image: url(pic.jpg); if we want a bg img*/ 
