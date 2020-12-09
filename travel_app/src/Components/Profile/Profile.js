@@ -1,25 +1,44 @@
 import React from 'react';
+import './Profile.css'
+import {Row, Col } from 'react-bootstrap'
+
+const styles = {
+    root: {
+        width: "50%",
+        margin: "auto",
+        background: "antiquewhite",
+        padding: "5%",
+        fontSize: "1.5rem",
+        borderRadius: "20px",
+        backgroundColor: "#357E85"
+    },
+    labelText: {
+        fontFamily: "Roboto",
+        fontSize: "2rem",
+        color: "#CCEBF4",
+    }
+  }
 
 const Profile = ({user}) => {
     return (
-        <div>
-            <div className='center '>
-            <div className='inline'>
-            <label> Name:</label>
-            <div>{user.name}</div>
-            </div>
-            <div className='inline'>
-            <label> email:</label>
-            <div>{user.email}</div>
-            </div>
-            <div className='inline'>
-            <label> Booked:</label>
-            <div>{user.entries}</div>
-            </div>
-            <div className='inline'>
-            <label> Date Joined:</label>
-            <div>{user.joined}</div>
-            </div>
+        <div style={styles.root}  >
+            <div className='center ' style={styles.labelText}>
+            <Row>
+                <Col> <label className='pr-3'> Name:</label> </Col> 
+                <Col><div>{user.name}</div></Col>
+            </Row>
+            <Row>
+                <Col> <label className='pr-3'> email:</label></Col>       
+                <Col>{user.email}</Col>
+            </Row>
+            <Row>
+                <Col>  <label  className='pr-3'> Booked:</label></Col>       
+                <Col>{user.entries}</Col>
+            </Row>
+            <Row>
+                <Col><label className='pr-3'> Date Joined:</label></Col>       
+                <Col>{user.joined}</Col>
+            </Row>            
             </div>      
  
         </div>

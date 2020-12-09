@@ -44,13 +44,13 @@ const Question = () => {
         
     }
 
-    function getCoordsAndResultsCity(e) {
+    function getCoordsAndResultsCity(event, e) {
         e.preventDefault()
         setCity(e.target[0].value)
         setNumResults(e.target[1].value)
         fetch(`https://api.tomtom.com/search/2/geocode/${e.target[0].value}.json?limit=1&countrySet=CA&key=w9lL7lmL6DnY6nsGPzZQVoF6AcepPNsN`)
         .then(response => response.json())
-        .then(data => {
+        .then(data => { console.log(data)
             setLat(data.results[0].position.lat)
             setLon(data.results[0].position.lon)
         })
@@ -66,13 +66,13 @@ const Question = () => {
         console.log(catArray)
         let categoryResultsArray = []
         
-        await fetch(`https://api.tomtom.com/search/2/search/${catArray[0]}.json?limit=${numResults}&countrySet=CA&key=w9lL7lmL6DnY6nsGPzZQVoF6AcepPNsN&lat=${lat}&lon=${lon}`)
+        await fetch(`https://api.tomtom.com/search/2/poiSearch/${catArray[0]}.json?limit=${numResults}&countrySet=CA&key=w9lL7lmL6DnY6nsGPzZQVoF6AcepPNsN&lat=${lat}&lon=${lon}`)
         .then(response => response.json())
         .then(data => categoryResultsArray.push(data.results))
-        await fetch(`https://api.tomtom.com/search/2/search/${catArray[1]}.json?limit=${numResults}&countrySet=CA&key=w9lL7lmL6DnY6nsGPzZQVoF6AcepPNsN&lat=${lat}&lon=${lon}`)
+        await fetch(`https://api.tomtom.com/search/2/poiSearch/${catArray[1]}.json?limit=${numResults}&countrySet=CA&key=w9lL7lmL6DnY6nsGPzZQVoF6AcepPNsN&lat=${lat}&lon=${lon}`)
         .then(response => response.json())
         .then(data => categoryResultsArray.push(data.results))
-        await fetch(`https://api.tomtom.com/search/2/search/${catArray[2]}.json?limit=${numResults}&countrySet=CA&key=w9lL7lmL6DnY6nsGPzZQVoF6AcepPNsN&lat=${lat}&lon=${lon}`)
+        await fetch(`https://api.tomtom.com/search/2/poiSearch/${catArray[2]}.json?limit=${numResults}&countrySet=CA&key=w9lL7lmL6DnY6nsGPzZQVoF6AcepPNsN&lat=${lat}&lon=${lon}`)
         .then(response => response.json())
         .then(data => {
             categoryResultsArray.push(data.results)

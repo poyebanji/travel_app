@@ -128,12 +128,4 @@ button.active {
     padding-left: 50px;
 }
 
-.center {
-    text-align: center;
-    font-size: 2rem;
-}
 
-.inline {
-  display: flex;
-  justify-content: center;
-}

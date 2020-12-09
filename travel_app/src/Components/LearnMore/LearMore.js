@@ -16,7 +16,7 @@ const LearnMore = ({onRouteChange}) =>  {
         </div>
      
       
-      <a href='https://www.freepik.com/vectors/car'>Car vector created by pch.vector - www.freepik.com</a>
+      
       <div class="ui center aligned container">
          <h1>Find your next experience in town</h1>
         <p>If you ever needed to experience a little 'out of house' experience  without booking a flight, you are in the right place.
@@ -54,6 +54,7 @@ const LearnMore = ({onRouteChange}) =>  {
            </div>
          </div>
        </div>
+       <a href='https://www.freepik.com/vectors/car'>Car vector created by pch.vector - www.freepik.com</a>
      </div>
     </div>
     

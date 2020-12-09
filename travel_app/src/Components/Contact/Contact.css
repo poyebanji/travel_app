@@ -2,10 +2,11 @@
         margin: 1rem 0;
         font-family: "Roboto";
         font-size: 2rem;
-        color: #CCEBF4;
+        color: rgb(53, 126, 133);
         height: 5rem;
         width: 100%;
         border: 3px solid #CCEBF4;
+        
         border-radius: 10px;
         /* padding-bottom: 50px; */
 }
@@ -14,4 +15,8 @@
     transform: scale(1.025);
     border-color: #D5654C;
     color: #D5654C;
+}
+
+.custom-button:active {
+    box-shadow: inset 5px 3px 1rem #464646;
 }
