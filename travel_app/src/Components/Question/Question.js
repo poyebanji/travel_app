@@ -45,7 +45,7 @@ const Question = () => {
     }
 
     function getCoordsAndResultsCity(event, e) {
-        
+        e.preventDefault()
         setCity(e.target[0].value)
         setNumResults(e.target[1].value)
         fetch(`https://api.tomtom.com/search/2/geocode/${e.target[0].value}.json?limit=1&countrySet=CA&key=w9lL7lmL6DnY6nsGPzZQVoF6AcepPNsN`)

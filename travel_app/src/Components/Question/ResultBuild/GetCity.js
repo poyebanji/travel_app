@@ -33,8 +33,8 @@ const GetCity = (props) => {
                         </Form.Group>
                         <Form.Group controlId="formNumResults">
                             <Form.Label>Number of results: </Form.Label>
-                            <Form.Control type="text" name="results" placeholder="number of results" ref={register({required: true})} />
-                            {errors.results && <p>This field is require</p>}
+                            <Form.Control type="number" name="results" placeholder="number of results" ref={register({required: true, valueAsNumber: true, maxLength: '1'})} />
+                            {errors.results && errors.results.maxLength !== '1' && <p>Value must be a number between 1 and 10</p>}
                             <Form.Text className="text-muted">
                                 *Number of results per activity
                             </Form.Text>
