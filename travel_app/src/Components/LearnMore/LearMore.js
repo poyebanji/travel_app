@@ -7,8 +7,8 @@ import './LearnMore.css'
 
 const LearnMore = ({onRouteChange}) =>  {
   return(
-    <div>
-      <div class="ui center aligned container body"> 
+    <div className="mx-5">
+      <div class=" ui center aligned container body"> 
          <h1 className="wrap"> Welcome to Travel App</h1>
          <img class="ui fluid image" fluid src={travel} alt="" size='massive' ></img>
          
@@ -17,7 +17,7 @@ const LearnMore = ({onRouteChange}) =>  {
      
       
       
-      <div class="ui center aligned container">
+      <div class="my-5 ui center aligned container">
          <h1>Find your next experience in town</h1>
         <p>If you ever needed to experience a little 'out of house' experience  without booking a flight, you are in the right place.
          Discover fun activities around

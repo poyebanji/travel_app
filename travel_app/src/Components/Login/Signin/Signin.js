@@ -58,7 +58,7 @@ onSubmitSignin = (event)=> {
       <label htmlFor="username">EMAIL</label>
       <input type="text" id="username" onChange={this.onEmailChange} />
       <label htmlFor="password" >PASSWORD</label>
-      <input type="text" id="password"  onChange={this.onPasswordChange}/>
+      <input type="password" id="password"  onChange={this.onPasswordChange}/>
       <input  onClick = {this.onSubmitSignin} type="submit" value="submit" className="submit" />
       <div>Forgot your password</div>
     </React.Fragment>
