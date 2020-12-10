@@ -11,7 +11,7 @@ function App() {
 
       <React.Fragment >
         <div className='footer-container mt-5'>
-    <div className='office-container pt-3'>      
+    <div className='office-container pt-4'>      
       <h5 className='pr-5'>1234, 25 Ave SW, Calgary</h5>
       <h5 className='pr-5'><a href="tel:403-123-4567">Phone: 403-123-4567</a></h5>
       <h5><a href="mailto:travel_app@gmail.com">email: info@roamin.com</a></h5>

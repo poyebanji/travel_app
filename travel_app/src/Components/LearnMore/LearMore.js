@@ -3,17 +3,23 @@ import travel from './travel.jpg';
 import './LearnMore.css'
 //import hiking from './hiking.jpg';
 
-
+const styles = {
+  labelText: {
+     fontFamily: "Roboto",
+    //  fontSize: "1.3rem",
+     color: "#357E85",
+ }
+}
 
 const LearnMore = ({onRouteChange}) =>  {
   return(
-    <div className="mx-5 bodyImage">
+    <div style={styles.labelText} className="mx-5 bodyImage">
       
-      <div className="ui p-2 center aligned container body"> 
+      <div  className="ui p-2 center aligned container body"> 
        <h1 className="wrap"> Welcome to Roamin`!</h1>
         </div>
 
-      <div className="ui center aligned container">
+      <div className="ui center aligned container my-3">
       <p><h1>3 Simple Steps to find your next exciting experience in town</h1></p>
         
        {/* <a href='./'>Explore your experiences</a> */}

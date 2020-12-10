@@ -3,7 +3,13 @@ import tourist from './tourist.jpg';
 import './LandingNew.css';
 import { Image } from 'semantic-ui-react';
 
-
+const styles = {
+  labelText: {
+     fontFamily: "Roboto",
+    //  fontSize: "1.3rem",
+     color: "#357E85",
+ }
+}
 
 
 //import ReactDOM from 'react-dom';
@@ -15,9 +21,9 @@ const mainParagraph = 'Join Roamin` and discover amazing adventures around you i
 const LandingNew = () => {
   return (
 
-    <div className="container-landing mx-5">  
-    <div className="landingText">
-    <h1 className="h1text">{mainText}</h1>
+    <div  className="container-landing mx-5">  
+    <div  className="landingText">
+    <h1 className="h1text ">{mainText}</h1>
       <h3>{mainParagraph}</h3> 
     </div>
 

@@ -2,17 +2,24 @@ import React from 'react';
 import {Nav, Navbar, Button} from 'react-bootstrap';
 import NavbarPage from '../Landing/LandingPageComponents/NavbarPage';
 
+const styles = {
+   labelText: {
+      fontFamily: "Roboto",
+      fontSize: "1.3rem",
+      color: "#357E85",
+  }
+}
 
 const Navigation = ({onRouteChange, isSignedIn}) => {
 if(isSignedIn){
   return(
     <React.Fragment>
-<Navbar className="mr-auto font-weight-bold mx-5" sticky ='top' bg="transparent" variant="light">
-<Navbar.Brand onClick = {()=>onRouteChange('signin')}>
+<Navbar style={styles.labelText} className="mr-auto font-weight-bold mx-5"  sticky ='top' bg="transparent" variant="primary">
+<Navbar.Brand >
   <NavbarPage />
   </Navbar.Brand>
-<Nav className="mr-auto" >
-<Nav.Link onClick = {()=>onRouteChange('home')} >Home</Nav.Link>
+<Nav className="mr-auto"  >
+<Nav.Link  onClick = {()=>onRouteChange('home')} >Home</Nav.Link>
 <Nav.Link onClick = {()=>onRouteChange('learnMore')} >Learn More</Nav.Link>
 <Nav.Link onClick = {()=>onRouteChange('profile')} >Profile</Nav.Link>
 </Nav>
@@ -27,8 +34,8 @@ if(isSignedIn){
 } else {
   return(
     <React.Fragment>
-<Navbar className="mr-auto font-weight-bold mx-5" sticky ='top' bg="transparent" variant="light">
-<Navbar.Brand onClick = {()=>onRouteChange('signin')}>
+<Navbar style={styles.labelText}className="mr-auto font-weight-bold mx-5" sticky ='top' bg="transparent" variant="primary">
+<Navbar.Brand >
   <NavbarPage />
 </Navbar.Brand>
 <Nav className="mr-auto"  >
