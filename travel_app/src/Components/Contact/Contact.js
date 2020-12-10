@@ -6,8 +6,9 @@ import { useForm } from 'react-hook-form'
 
 const styles = {
     root: {
-        width: "50%",
+        width: "70%",
         margin: "auto",
+        marginTop: "3%",
         background: "antiquewhite",
         padding: "5%",
         fontSize: "1.5rem",
@@ -16,7 +17,7 @@ const styles = {
     },
     labelText: {
         fontFamily: "Roboto",
-        fontSize: "2rem",
+        fontSize: "1.5rem",
         color: "#CCEBF4",
     }
 }

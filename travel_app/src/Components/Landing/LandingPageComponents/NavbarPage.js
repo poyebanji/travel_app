@@ -5,7 +5,7 @@ const NavbarPage = (props)=>{
 
     return (
         
-        <Header as='h2' icon='paper plane outline' content=" Roamin' " />
+        <Header as='h2' icon='paper plane' content=" Roamin` " />
 
         // <div className="">
         //     <img 

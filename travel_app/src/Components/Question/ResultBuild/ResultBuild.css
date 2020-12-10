@@ -1,7 +1,11 @@
 .city-background {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-   
-
+  justify-content: center;
+}
+.cityForm{
+  display: flex;
+  align-items: stretch;
+  margin: 3px;
+  padding-top: 3px;
 }

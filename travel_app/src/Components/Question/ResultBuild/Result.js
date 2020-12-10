@@ -79,7 +79,7 @@ const Result = ({name, phoneNumber, address, url, category, lat, lon}) => {
                     </Row>
                     <Row>
                         <a style={{margin: 'auto'}} href={checkurl} target="_blank">
-                            <Button variant="primary">Find Online</Button>
+                            <Button variant="outline-info">Find Online</Button>
                         </a>
                     </Row>
                 </Card.Body>

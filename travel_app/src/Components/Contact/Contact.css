@@ -1,5 +1,6 @@
 .custom-button {
         margin: 1rem 0;
+        margin-top: 3rem;
         font-family: "Roboto";
         font-size: 2rem;
         color: #CCEBF4;
@@ -13,8 +14,8 @@
 
 .custom-button:hover {
     transform: scale(1.025);
-    border-color: #D5654C;
-    color: #D5654C;
+    background-color: #CCEBF4;
+    color: #357e85;
 }
 
 .custom-button:active {

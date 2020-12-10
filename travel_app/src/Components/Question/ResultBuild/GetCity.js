@@ -21,11 +21,12 @@ const styles = {
     formMain: {
         width: "100%",
         margin: "0px",
-        fontSize: "2rem",
+        fontSize: "1.9rem",
         fontFamily: 'Roboto',
-        padding: "6%",
+        padding: "4%",
         borderRadius: "20px",
-        color: "#357e85"
+        color: "#357e85",
+        paddingTop: "10%"
     },
     formLabel: {
         borderBottom: "1px solid #96e1f3",
@@ -36,8 +37,8 @@ const GetCity = (props) => {
 
     const { register, handleSubmit, errors} = useForm()
     return(
-            <div  className='city-background'>
-                <div>
+            <div  className='city-background' >
+                <div className='cityForm'>
                     <Form style={styles.formMain} onSubmit={handleSubmit(props.cityFunc)}>
                         <Form.Group controlId="formCity">
                             <Form.Label>Enter your city: </Form.Label>
@@ -52,13 +53,15 @@ const GetCity = (props) => {
                                 *Number of results per activity
                             </Form.Text>
                         </Form.Group>
-                        <Button variant="primary" type="submit">
+                        <Button variant="outline-info" type="submit">
                             Submit
                         </Button>
                     </Form>
                 </div>
+                
                 <div>
-                    <Image src={hiking} size='massive' />
+                    <Image src={hiking} size='big' />
+                   
                 </div>
         </div>
     )

@@ -61,7 +61,7 @@ const CardInfo = (props) => {
               return <ListGroup.Item key={i} style={styles.cardBullet}>{item}</ListGroup.Item>
             })}
           </ListGroup>
-          <Button style={styles.button} size="lg"  variant="outline-primary" onClick={()=>{props.categoryFunc(props.activities)}}>Select</Button>
+          <Button style={styles.button} size="lg"  variant="outline-info" onClick={()=>{props.categoryFunc(props.activities)}}>Select</Button>
         </Card.Body>
       </Card>
       

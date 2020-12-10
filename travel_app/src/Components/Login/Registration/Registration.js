@@ -56,6 +56,7 @@ class Registration extends Component {
   render() { 
     return (       
     <React.Fragment>
+      <div className="loginText">
         <label htmlFor="fullname">full name</label>
         <input type="text" id="fullname"  onChange = {this.onNameChange }/>
         <label htmlFor="email">email</label>
@@ -65,6 +66,7 @@ class Registration extends Component {
         <label htmlFor="confirmpassword">confirm password</label>
         <input type="password" id="confirmpassword" />
         <input onClick = {this.onSubmitSignin} type="submit" value="submit" className="submit" />
+        </div>
       </React.Fragment>
        );
   }

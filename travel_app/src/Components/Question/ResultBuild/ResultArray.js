@@ -16,7 +16,7 @@ const ResultArray = (props) => {
         <div>
             <Button 
             onClick={runReset} 
-            variant="outline-primary" 
+            variant="outline-info" 
             size="lg" 
             style={{margin: "20px", position: "fixed"}}>Back to start</Button>
             {props.poiResultsArray.map((smallArray)=>{

@@ -11,13 +11,14 @@
   
   
   .profileBox {
-    width: "50%";
-    margin: "auto";
-    background: "antiquewhite";
-    padding: "5%";
-    font-size: "1.5rem";
-    border-radius: "20px";
-    background-color: "#357E85"
+    width: 80%;
+    margin-top: 50px;
+    margin: auto;
+    background: antiquewhite;
+     padding: 80px;
+    font-size: 1.5rem;
+    border-radius: 20px;
+    background-color: #357E85
   }
   .labelText {
     font-family: "Roboto";

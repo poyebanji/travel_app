@@ -4,10 +4,11 @@ import {Row, Col } from 'react-bootstrap'
 
 const styles = {
     root: {
-        width: "50%",
+        width: "80%",
+        marginTop: "60px",
         margin: "auto",
         background: "antiquewhite",
-        padding: "5%",
+        padding: "80px",
         fontSize: "1.5rem",
         borderRadius: "20px",
         backgroundColor: "#357E85"
@@ -22,7 +23,7 @@ const styles = {
 const Profile = ({user}) => {
     return (
         <div style={styles.root}  >
-            <div className='center ' style={styles.labelText}>
+            <div className='center' style={styles.labelText}>
             <Row>
                 <Col> <label className='pr-3'> Name:</label> </Col> 
                 <Col><div>{user.name}</div></Col>

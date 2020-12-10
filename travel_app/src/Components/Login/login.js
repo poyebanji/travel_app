@@ -20,11 +20,11 @@ function Login({onRouteChange, loadUser}) {
     const loginBtnProps = useSpring({
       borderBottom: registrationFormStatus 
         ? "solid 0px transparent"
-        : "solid 2px #1059FF",  //Animate bottom border of login button
+        : "solid 2px #357e85",  //Animate bottom border of login button
     });
     const registerBtnProps = useSpring({
       borderBottom: registrationFormStatus
-        ? "solid 2px #1059FF"
+        ? "solid 2px #357e85"
         : "solid 0px transparent", //Animate bottom border of register button
     });
   
@@ -40,6 +40,7 @@ function Login({onRouteChange, loadUser}) {
       <div className="container-login">
       <div className="login-register-wrapper">
         <div className="nav-buttons center ">
+          
           <animated.button
             onClick={loginClicked}
             id="loginBtn"
@@ -47,6 +48,7 @@ function Login({onRouteChange, loadUser}) {
           >
             Login
           </animated.button>
+          
          
           <animated.button
           className='signinbtn'
@@ -56,6 +58,7 @@ function Login({onRouteChange, loadUser}) {
           >
             Register
           </animated.button>
+        
         </div>
         <div className="form-group">
           <animated.form action="" id="loginform" style={loginProps}>
@@ -65,9 +68,9 @@ function Login({onRouteChange, loadUser}) {
             <Registration loadUser={loadUser} onRouteChange={onRouteChange} />
           </animated.form>
         </div>
-        <animated.div className="forgot-panel" style={loginProps}>
+        {/* <animated.div className="forgot-panel" style={loginProps}>
           
-        </animated.div>
+        </animated.div> */}
       </div>
       
       </div>
