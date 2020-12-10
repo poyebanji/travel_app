@@ -5,10 +5,10 @@ import {Row, Col } from 'react-bootstrap'
 const styles = {
     root: {
         width: "80%",
-        marginTop: "60px",
+        marginTop: "65px",
         margin: "auto",
         background: "antiquewhite",
-        padding: "80px",
+        padding: "50px",
         fontSize: "1.5rem",
         borderRadius: "20px",
         backgroundColor: "#357E85"

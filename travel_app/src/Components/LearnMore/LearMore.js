@@ -7,29 +7,27 @@ import './LearnMore.css'
 
 const LearnMore = ({onRouteChange}) =>  {
   return(
-    <div className="mx-5">
-      <div className=" ui center aligned container body"> 
-         <h1 className="wrap"> Welcome to Travel App</h1>
-         <img className="ui fluid image" fluid src={travel} alt="" size='massive' ></img>
-         
-    
+    <div className="mx-5 bodyImage">
+      
+      <div className="ui p-2 center aligned container body"> 
+       <h1 className="wrap"> Welcome to Roamin`!</h1>
         </div>
-     
-      
-      
-      <div className="my-5 ui center aligned container">
-         <h1>Find your next experience in town</h1>
-        <p>If you ever needed to experience a little 'out of house' experience  without booking a flight, you are in the right place.
-         Discover fun activities around
-       </p>
-       <a href='./'>Explore your experiences</a>
-     </div>
-      
-     <h2>How to get started</h2>
 
-     <div className="ui stackable three column grid">
+      <div className="ui center aligned container">
+      <p><h1>3 Simple Steps to find your next exciting experience in town</h1></p>
+        
+       {/* <a href='./'>Explore your experiences</a> */}
+     </div>
+     <div className=" ui center aligned container"> 
+     <p>If you ever needed to experience a little 'out of house' experience  without booking a flight, you are in the right place.
+         To discover fun activities around you, take these 3 simple steps.
+       </p>
+        </div>
+         {/* <img className="ui fluid image" fluid src={travel} alt="" size='big' ></img> */}
+
+     <div className="ui my-2 stackable three column grid">
        <div className="column">
-          <div className="ui raised segment">
+          <div className="ui grow raised segment">
            <div >
              <img className="ui fluid image" fluid src={travel} alt="" size='mini'></img>
              <button onClick = {()=>onRouteChange('signin')} ><h4>Sign up/Login</h4></button>
@@ -38,19 +36,19 @@ const LearnMore = ({onRouteChange}) =>  {
        </div>
 
        <div className="column">
-          <div className="ui raised segment">
+          <div className="ui raised grow segment">
            <div>
              <img className="ui fluid image" fluid src={travel} alt="" size='mini'></img>
-             <h4>Find your travel personality type</h4>
+             <h4>Input your city and number of results</h4>
            </div>
          </div>
        </div>
 
        <div className="column">
-          <div className="ui raised segment">
+          <div className="ui grow raised segment">
            <div >
              <img className="ui fluid image" fluid src={travel} alt="" size='mini'></img>
-             <h4>Make a booking and enjoy your experience</h4>
+             <h4>Pick a vacation personality type </h4>
            </div>
          </div>
        </div>
