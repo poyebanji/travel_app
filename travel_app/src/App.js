@@ -27,6 +27,7 @@ class App extends Component {
     isSignedIn:false,
     user:{
       name: "",
+      id:"",
       email:"",
       joined:""
     }
@@ -35,6 +36,7 @@ class App extends Component {
 
 loadUser = (data)=>{
      this.setState({user:{
+       id: data.id,
        name:data.name,
        email:data.email,
        joined:data.joined,
