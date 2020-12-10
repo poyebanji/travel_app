@@ -5,8 +5,9 @@ import {Row, Col } from 'react-bootstrap'
 const styles = {
     root: {
         width: "80%",
-        marginTop: "65px",
         margin: "auto",
+        marginBottom: "65px",
+        marginTop: "65px",
         background: "antiquewhite",
         padding: "50px",
         fontSize: "1.5rem",

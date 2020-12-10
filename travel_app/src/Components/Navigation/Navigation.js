@@ -31,7 +31,7 @@ if(isSignedIn){
 <Navbar.Brand onClick = {()=>onRouteChange('signin')}>
   <NavbarPage />
 </Navbar.Brand>
-<Nav className="mr-auto">
+<Nav className="mr-auto"  >
 <Nav.Link onClick = {()=>onRouteChange('signout')} >Home</Nav.Link>
 <Nav.Link onClick = {()=>onRouteChange('learnMore')} >Learn More</Nav.Link>
 {/* <Nav.Link onClick = {()=>onRouteChange('profile')} >Profile</Nav.Link> */}
