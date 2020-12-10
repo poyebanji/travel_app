@@ -25,6 +25,10 @@ const Profile = ({user}) => {
         <div style={styles.root}  >
             <div className='center' style={styles.labelText}>
             <Row>
+                <Col> <label className='pr-3'>ID:</label> </Col> 
+                <Col><div>{user.id}</div></Col>
+            </Row>
+            <Row>
                 <Col> <label className='pr-3'> Name:</label> </Col> 
                 <Col><div>{user.name}</div></Col>
             </Row>

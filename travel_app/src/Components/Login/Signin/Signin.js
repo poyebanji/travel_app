@@ -41,7 +41,13 @@ onSubmitSignin = (event)=> {
       this.props.onRouteChange('signin')
       
    
-    }else if(user.id) {
+    }else if (user=== 'unable to log on') {
+      alert(user)
+      this.props.onRouteChange('signin')
+      
+   
+    }
+    else if(user.id) {
       console.log(user)
       this.props.loadUser(user)
       this.props.onRouteChange('home')
