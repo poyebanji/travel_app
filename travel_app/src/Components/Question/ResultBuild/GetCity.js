@@ -17,6 +17,19 @@ const styles = {
         display: 'flex',
         flexDirection: 'column',
         fontSize: '1.3rem',
+    },
+    formMain: {
+        width: "100%",
+        margin: "0px",
+        fontSize: "2rem",
+        fontFamily: 'Roboto',
+        padding: "6%",
+        borderRadius: "20px",
+        color: "#357e85"
+    },
+    formLabel: {
+        borderBottom: "1px solid #96e1f3",
+        borderWidth: "thick"
     }
 }
 const GetCity = (props) => {
@@ -25,15 +38,15 @@ const GetCity = (props) => {
     return(
             <div  className='city-background'>
                 <div>
-                    <Form style={{width: "100%", margin: "0px"}} onSubmit={handleSubmit(props.cityFunc)}>
+                    <Form style={styles.formMain} onSubmit={handleSubmit(props.cityFunc)}>
                         <Form.Group controlId="formCity">
                             <Form.Label>Enter your city: </Form.Label>
-                            <Form.Control name="city" type="text" placeholder="enter your city: " ref={register({required: true})}/>
+                            <Form.Control style={styles.formLabel} name="city" type="text" placeholder="enter your city: " ref={register({required: true})}/>
                             {errors.city && <p>This field is required</p>}
                         </Form.Group>
                         <Form.Group controlId="formNumResults">
                             <Form.Label>Number of results: </Form.Label>
-                            <Form.Control type="number" name="results" placeholder="number of results" ref={register({required: true, valueAsNumber: true, maxLength: '1'})} />
+                            <Form.Control style={styles.formLabel} type="number" name="results" placeholder="number of results" ref={register({required: true, valueAsNumber: true, maxLength: '1'})} />
                             {errors.results && errors.results.maxLength !== '1' && <p>Value must be a number between 1 and 10</p>}
                             <Form.Text className="text-muted">
                                 *Number of results per activity

@@ -53,7 +53,7 @@ const Result = ({name, phoneNumber, address, url, category, lat, lon}) => {
 
     return(
         <div style={{margin:'1%'}}>
-            <Card style={{width: '50%', padding: '1%', margin: 'auto', borderRadius: '5px'}}>
+            <Card style={{width: '70%', padding: '1%', margin: 'auto', borderRadius: '5px'}}>
                 <Card.Header>{name}</Card.Header>
                 <Card.Body>
                     <Row>
