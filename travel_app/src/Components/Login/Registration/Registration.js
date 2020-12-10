@@ -63,7 +63,7 @@ class Registration extends Component {
         <label htmlFor="password" >password</label>
         <input type="password" id="password" onChange = {this.onPasswordChange}/>
         <label htmlFor="confirmpassword">confirm password</label>
-        <input type="text" id="confirmpassword" />
+        <input type="password" id="confirmpassword" />
         <input onClick = {this.onSubmitSignin} type="submit" value="submit" className="submit" />
       </React.Fragment>
        );

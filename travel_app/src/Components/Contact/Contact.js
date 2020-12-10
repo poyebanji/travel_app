@@ -73,7 +73,7 @@ const Contact = () => {
                             </Form.Group>
                         </Col>
                     </Row>
-                    <button style={styles.labelText} type='submit' class="custom-button">SUBMIT</button>
+                    <button type='submit' className="custom-button">SUBMIT</button>
                 </form>
         </div>
       );
