@@ -20,13 +20,13 @@ const LearnMore = ({onRouteChange}) =>  {
         </div>
 
       <div className="ui center aligned container my-3">
-      <p><h1>3 Simple Steps to find your next exciting experience in town</h1></p>
+      <p><h1><b>3 Simple Steps to find your next exciting experience in town</b></h1></p>
         
        {/* <a href='./'>Explore your experiences</a> */}
      </div>
      <div className=" ui center aligned container"> 
-     <p>If you ever needed to experience a little 'out of house' experience  without booking a flight, you are in the right place.
-         To discover fun activities around you, take these 3 simple steps.
+     <p><h3>If you ever needed to experience a little 'out of house' experience  without booking a flight, you are in the right place.
+         To discover fun activities around you, take these 3 simple steps.</h3>
        </p>
         </div>
          {/* <img className="ui fluid image" fluid src={travel} alt="" size='big' ></img> */}

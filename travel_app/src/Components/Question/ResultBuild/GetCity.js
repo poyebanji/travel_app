@@ -8,7 +8,7 @@ import { useForm } from 'react-hook-form'
 
 const styles = {
     root: {
-        margin: '20px'
+        margin: '40px'
     },
     outer: {
         display: 'flex',
@@ -16,17 +16,17 @@ const styles = {
     inner: {
         display: 'flex',
         flexDirection: 'column',
-        fontSize: '1.3rem',
+        fontSize: '1.8rem',
     },
     formMain: {
         width: "100%",
         margin: "0px",
-        fontSize: "1.9rem",
+        fontSize: "2.5rem",
         fontFamily: 'Roboto',
-        padding: "4%",
+        padding: "8%",
         borderRadius: "20px",
         color: "#357e85",
-        paddingTop: "10%"
+        paddingTop: "15%"
     },
     formLabel: {
         borderBottom: "1px solid #96e1f3",
@@ -60,7 +60,7 @@ const GetCity = (props) => {
                 </div>
                 
                 <div>
-                    <Image src={hiking} size='big' />
+                    <Image src={hiking} size='huge' />
                    
                 </div>
         </div>

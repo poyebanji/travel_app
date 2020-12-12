@@ -6,6 +6,6 @@
 .cityForm{
   display: flex;
   align-items: stretch;
-  margin: 3px;
-  padding-top: 3px;
+  margin: 24px;
+  padding-top: 12px;
 }

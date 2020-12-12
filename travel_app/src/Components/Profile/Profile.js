@@ -5,11 +5,12 @@ import {Row, Col } from 'react-bootstrap'
 const styles = {
     root: {
         width: "80%",
-        margin: "auto",
-        marginBottom: "65px",
-        marginTop: "65px",
+        marginLeft: "auto",
+        marginRight: "auto",
+        marginBottom: "105px",
+        marginTop: "105px",
         background: "antiquewhite",
-        padding: "50px",
+        padding: "100px",
         fontSize: "1.5rem",
         borderRadius: "20px",
         backgroundColor: "#357E85"

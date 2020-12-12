@@ -27,7 +27,7 @@ const LandingNew = () => {
       <h3>{mainParagraph}</h3> 
     </div>
 
-      <Image src={tourist} size='huge' />
+      <Image src={tourist} size='massive' />
       {/* <img class="ui fluid image" fluid src={tourist} alt="" size='medium' ></img> */}
         
         
